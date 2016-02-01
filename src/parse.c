@@ -12,7 +12,7 @@
 
 #include "ft_ls.h"
 
-static void		sort_list(t_err *err)
+static void		sort_error_list(t_err *err)
 {
 	char	*tmp;
 	t_err	*cur;
@@ -25,7 +25,7 @@ static void		sort_list(t_err *err)
 			tmp = cur->name;
 			cur->name = cur->next->name;
 			cur->next->name = tmp;
-			cur = err->prev;
+			cur = cur->prev->prev;
 		}
 		cur = cur->next;
 	}
@@ -38,7 +38,7 @@ static void		print_error(t_err *err, short uso)
 	t_err	*cur;
 
 	cur = err->next;
-	uso == 0 ? sort_list(cur) : 0;
+	uso == 0 ? sort_error_list(cur) : 0;
 	while (cur != NULL)
 	{
 		e = ft_strjoin("ft_ls: ", cur->name);
