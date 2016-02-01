@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/01 17:03:07 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/01 18:53:01 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ static void		sort_list(t_err *err)
 	t_err	*cur;
 
 	cur = err;
-	while (cur != NULL)
+	while (cur->next != NULL)
 	{
 		if (ft_strcmp(cur->name, cur->next->name) > 0)
 		{
 			tmp = cur->name;
 			cur->name = cur->next->name;
 			cur->next->name = tmp;
+			cur = err->prev;
 		}
 		cur = cur->next;
 	}
