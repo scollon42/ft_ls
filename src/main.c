@@ -3,28 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/31 13:35:00 by                   #+#    #+#             */
-/*   Updated: 2016/01/31 14:59:51 by                  ###   ########.fr       */
+/*   Created: 2016/02/01 09:41:28 by scollon           #+#    #+#             */
+/*   Updated: 2016/02/01 12:48:28 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include <errno.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <string.h>
+#include "ft_ls.h"
 
-int	main(int ac, char **av)
+
+static t_ls	*init_ls(int ac)
 {
-	int	fd;
+	t_ls	*new;
 
-	if ((fd = open(av[1], O_RDWR) == -1))
-		printf("Error : %s\n", strerror(errno));
-	else
-		printf("Ok\n");
-	if (close(fd) == -1)
-		printf("Error : %s\n", strerror(errno));
+	new = (t_ls *)malloc(sizeof(t_ls));
+	if (new == NULL)
+		error("Malloc():", strerror(ENOMEM));
+	new->arg.rec = 0;
+	new->arg.lis = 0;
+	new->arg.all = 0;
+	new->arg.tim = 0;
+	new->arg.rev = 0;
+	new->arg.col = 0;
+	new->arg.uso = 0;
+	new->arg.donly = 0;
+	new->arg.ino = 0;
+	return (new);
+}
+
+int			main(int ac, char **av)
+{
+	t_ls	*ls;
+
+	ls = init_ls(ac);
+	read_arg(ls, ac, av);
+	parse(ls);
 	return (0);
 }

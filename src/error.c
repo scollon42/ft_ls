@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/01 09:22:22 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/01 09:49:21 by scollon          ###   ########.fr       */
+/*   Created: 2016/02/01 09:50:55 by scollon           #+#    #+#             */
+/*   Updated: 2016/02/01 13:16:25 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ls.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void        error(char *type, char *error)
 {
-	unsigned char	*b1;
-
-	b1 = (unsigned char*)b;
-	while (len--)
-		b1[len] = (unsigned char)c;
-	return (b1);
+	if (type)
+	{
+		ft_putstr_fd(type, 2);
+		ft_putchar_fd(' ', 2);
+	}
+	if (error)
+		ft_putstr_fd(error, 2);
+	ft_putchar_fd('\n', 2);
+	exit(0);
 }

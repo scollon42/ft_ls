@@ -10,20 +10,20 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC_PATH 	= ./src/
-OBJ_PATH	= ./obj/
-INC_PATH	= ./includes/
-LIB_PATH	= ./lib/
-INC_LIBFT_PATH	= $(LIB_PATH)/includes/
+SRC_PATH 		= ./src/
+OBJ_PATH		= ./obj/
+INC_PATH		= ./include/
+LIB_PATH		= ./libft/
+INC_LIBFT_PATH	= $(LIB_PATH)includes/
 
 NAME 		= ft_ls
-CC 		= gcc
+CC 			= gcc
 CFGLAGS 	= -Werror -Wextra -Wall
 
-SRC_NAME 	= main.c
-
+SRC_NAME 	= main.c read_arg.c parse.c error.c
 OBJ_NAME 	= $(SRC_NAME:.c=.o)
-LIB_NAME 	= $(LIB_PATH)/libft.a
+
+LIB = $(LIB_PATH)libft.a
 
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
@@ -33,7 +33,7 @@ INC_LIBFT = $(addprefix -I,$(INC_LIBFT_PATH))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@make -C $(LIB_PATH)libft re
+	@make -C $(LIB_PATH)
 	$(CC) $(CFLAGS) $(MLX) $(LIB) $(INC_LIBFT) $(INC) $(OBJ) -o $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
