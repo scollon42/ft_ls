@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/01 18:53:01 by                  ###   ########.fr       */
+/*   Updated: 2016/02/01 21:43:37 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		sort_error_list(t_err *err)
 	char	*tmp;
 	t_err	*cur;
 
-	cur = err;
+	cur = err->next;
 	while (cur->next != NULL)
 	{
 		if (ft_strcmp(cur->name, cur->next->name) > 0)
@@ -25,7 +25,7 @@ static void		sort_error_list(t_err *err)
 			tmp = cur->name;
 			cur->name = cur->next->name;
 			cur->next->name = tmp;
-			cur = cur->prev->prev;
+			cur = err->next;
 		}
 		cur = cur->next;
 	}
@@ -38,7 +38,7 @@ static void		print_error(t_err *err, short uso)
 	t_err	*cur;
 
 	cur = err->next;
-	uso == 0 ? sort_error_list(cur) : 0;
+	uso == 0 ? sort_error_list(err) : 0;
 	while (cur != NULL)
 	{
 		e = ft_strjoin("ft_ls: ", cur->name);
@@ -50,7 +50,6 @@ static void		print_error(t_err *err, short uso)
 		ft_memdel((void**)&cur->prev);
 		cur = cur->next;
 	}
-	//ft_memdel((void**)&cur->prev);
 }
 
 static t_elem	*new_elem(char *path, t_stat stat)
@@ -93,6 +92,7 @@ void			parse(t_ls *ls)
 
 	i = -1;
 	x = -1;
+	ls->enb = 0;
 	if (!(ls->elem = (t_elem**)malloc(sizeof(t_elem*) * ls->arg.fnb)))
 		error("Malloc(): ", strerror(ENOMEM));
 	ls->error = new_error(NULL, NULL);
@@ -103,10 +103,11 @@ void			parse(t_ls *ls)
 		{
 			err->next = new_error(ls->arg.name[i], err);
 			err = err->next;
+			ls->enb++;
 		}
 		else
 			ls->elem[++x] = new_elem(ls->arg.name[i], s);
 	}
 	free(ls->arg.name);
-	print_error(ls->error, ls->arg.uso);
+	ls->enb > 0 ? print_error(ls->error, ls->arg.uso) : 0;
 }

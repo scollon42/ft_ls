@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/01 16:53:04 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/01 21:43:06 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ typedef struct		s_ls
 	t_arg			arg;
 	t_elem			**elem;
 	t_err			*error;
+	int			enb;
 }					t_ls;
 
 void				read_arg(t_ls *ls, const int ac, char **av);
