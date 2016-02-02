@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:41:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 08:36:59 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/02 09:30:34 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int			main(int ac, char **av)
 	ls = init_ls(ac);
 	read_arg(ls, ac, av);
 	parse_arg(ls);
+	core(ls);
 	return (0);
 }

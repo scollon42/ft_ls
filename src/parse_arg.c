@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 09:00:30 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/02 09:37:13 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,13 +85,12 @@ static t_err	*new_error(char *path, t_err *prev)
 void			parse_arg(t_ls *ls)
 {
 	int		i;
-	int		x;
 	t_stat	s;
 	t_err	*err;
 
 	i = -1;
-	x = -1;
 	ls->enb = 0;
+	ls->fnb = -1;
 	if (!(ls->elem = (t_elem**)malloc(sizeof(t_elem*) * ls->arg.fnb)))
 		error("Malloc(): ", strerror(ENOMEM));
 	ls->error = new_error(NULL, NULL);
@@ -105,7 +104,7 @@ void			parse_arg(t_ls *ls)
 			ls->enb++;
 		}
 		else
-			ls->elem[++x] = new_elem(ls->arg.name[i], s);
+			ls->elem[++ls->fnb] = new_elem(ls->arg.name[i], s);
 	}
 	free(ls->arg.name);
 	ls->enb > 0 ? print_error(ls->error, ls->arg.uso) : 0;

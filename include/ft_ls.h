@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 09:12:35 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/02 09:46:55 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct		s_arg
 typedef struct		s_elem
 {
 	char			*path;
-	struct stat		stat; // Stat of file
+	t_stat			stat; // Stat of file
 	struct s_elem	*parent;
 	struct s_elem	*fchild;
 	struct s_elem	*right;
@@ -68,7 +68,8 @@ typedef struct		s_ls
 	t_arg			arg;
 	t_elem			**elem;
 	t_err			*error;
-	int			enb;
+	int				enb;
+	int				fnb;
 }					t_ls;
 
 void				read_arg(t_ls *ls, const int ac, char **av);
