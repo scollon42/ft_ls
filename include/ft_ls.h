@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 09:46:55 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/02 12:13:53 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <string.h>
 # include <errno.h>
 # include <sys/stat.h>
+# include <sys/dir.h>
 
 # define E_ILLEGAL "ft_ls: illegal option -- "
 # define E_STAT	"stat(): failed"
@@ -49,7 +50,11 @@ typedef struct		s_arg
 typedef struct		s_elem
 {
 	char			*path;
-	t_stat			stat; // Stat of file
+	t_stat			stat;
+	int				is_dir;
+	DIR				*d_adr;
+	struct passwd	*pwuid;
+	struct group	*grgid;
 	struct s_elem	*parent;
 	struct s_elem	*fchild;
 	struct s_elem	*right;

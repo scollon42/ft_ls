@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 09:37:13 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/02 13:02:49 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ static void		print_error(t_err *err, short uso)
 	char	*del;
 	t_err	*cur;
 
-	uso == 0 ? sort_error_list(err) : 0;
 	cur = err->next;
+	uso == 0 ? sort_error_list(err) : 0;
 	while (cur != NULL)
 	{
 		e = ft_strjoin("ft_ls: ", cur->name);
@@ -63,9 +63,17 @@ static t_elem	*new_elem(char *path, t_stat stat)
 	if (new->path == NULL)
 		error("Malloc(): ", strerror(ENOMEM));
 	new->stat = stat;
+	new->is_dir = S_ISDIR(new->stat.st_mode) ? 1 : 0;
+	if (new->is_dir)
+	{
+		if (!(new->d_adr = opendir(new->path)))
+			error("ft_ls: ", strerror(errno));
+	}
+	new->is_dir == 0 ? new->d_adr = NULL : 0;
+	new->fchild = NULL;
 	new->parent = NULL;
-	new->fchild = NULL;
-	new->fchild = NULL;
+	new->left = NULL;
+	new->right = NULL;
 	return (new);
 }
 
