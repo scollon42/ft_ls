@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/01 21:43:37 by                  ###   ########.fr       */
+/*   Updated: 2016/02/02 09:00:30 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ static void		print_error(t_err *err, short uso)
 	char	*del;
 	t_err	*cur;
 
-	cur = err->next;
 	uso == 0 ? sort_error_list(err) : 0;
+	cur = err->next;
 	while (cur != NULL)
 	{
 		e = ft_strjoin("ft_ls: ", cur->name);
@@ -66,7 +66,6 @@ static t_elem	*new_elem(char *path, t_stat stat)
 	new->parent = NULL;
 	new->fchild = NULL;
 	new->fchild = NULL;
-	new->fchild = NULL;
 	return (new);
 }
 
@@ -83,7 +82,7 @@ static t_err	*new_error(char *path, t_err *prev)
 	return (new);
 }
 
-void			parse(t_ls *ls)
+void			parse_arg(t_ls *ls)
 {
 	int		i;
 	int		x;

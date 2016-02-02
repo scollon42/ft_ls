@@ -2,8 +2,17 @@
 .SH NAME
 ft_ls \- try to copy ls(1) behavior
 .SH SYNOPSYS
-ft_ls \- [OPTION]... [FILE]...
+.B\-ft_ls \- [-GRflta] [file ...]
 .SH DESCRIPTION
-ft_ls will list informations about FILEs and sort it alphabetically (if no options 
-.B\--f
+ft_ls will list informations about FILEs and sort it alphabetically (if no options .B\--f
 is specified)
+For each operand give in arguments,
+.B\-ft_ls
+will sort and list informations about those files.
+
+
+
+If no operand are given,
+.B\-ft_ls
+will print the content of the current directory with informations
+requested by options.

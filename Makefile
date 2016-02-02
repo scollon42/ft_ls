@@ -20,7 +20,7 @@ NAME 			= ft_ls
 CC 			= gcc
 CFGLAGS 		= -Werror -Wextra -Wall
 
-SRC_NAME 		= main.c read_arg.c parse.c error.c
+SRC_NAME 		= main.c read_arg.c parse_arg.c error.c
 OBJ_NAME 		= $(SRC_NAME:.c=.o)
 
 LIB 			= $(LIB_PATH)libft.a

@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/01 21:43:06 by                  ###   ########.fr       */
+/*   Updated: 2016/02/02 09:12:35 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ typedef struct		s_ls
 }					t_ls;
 
 void				read_arg(t_ls *ls, const int ac, char **av);
-void				parse(t_ls *ls);
+void				parse_arg(t_ls *ls);
+void				core(t_ls *ls);
 void				error(char *type, char *error);
 
 #endif
