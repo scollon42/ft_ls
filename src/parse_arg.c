@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 13:02:49 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/02 16:58:56 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,7 @@ static t_elem	*new_elem(char *path, t_stat stat)
 		error("Malloc(): ", strerror(ENOMEM));
 	new->stat = stat;
 	new->is_dir = S_ISDIR(new->stat.st_mode) ? 1 : 0;
-	if (new->is_dir)
-	{
-		if (!(new->d_adr = opendir(new->path)))
-			error("ft_ls: ", strerror(errno));
-	}
-	new->is_dir == 0 ? new->d_adr = NULL : 0;
+	new->d_adr = NULL;
 	new->fchild = NULL;
 	new->parent = NULL;
 	new->left = NULL;
