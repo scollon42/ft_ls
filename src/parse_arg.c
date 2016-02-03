@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 16:58:56 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/03 08:33:23 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static t_elem	*new_elem(char *path, t_stat stat)
 	if (!(new = (t_elem*)malloc(sizeof(t_elem))))
 		error("Malloc(): ", strerror(ENOMEM));
 	new->path = ft_strdup(path);
+	new->abs_path = ft_strdup(path);
 	ft_strdel(&path);
 	if (new->path == NULL)
 		error("Malloc(): ", strerror(ENOMEM));

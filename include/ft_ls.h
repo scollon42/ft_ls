@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/02 12:13:53 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/03 07:56:02 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct		s_arg
 typedef struct		s_elem
 {
 	char			*path;
+	char			*abs_path;
 	t_stat			stat;
 	int				is_dir;
 	DIR				*d_adr;
@@ -79,6 +80,7 @@ typedef struct		s_ls
 
 void				read_arg(t_ls *ls, const int ac, char **av);
 void				parse_arg(t_ls *ls);
+void				get_abs_path(t_elem *elem);
 void				core(t_ls *ls);
 void				error(char *type, char *error);
 
