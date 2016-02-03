@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 09:08:33 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/03 09:53:46 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/03 15:45:00 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ static void	dir_information(t_elem *elem, int rec)
 	struct dirent	*d_stat;
 
 	tmp = NULL;
-	cur = elem->fchild;
 	if (!(elem->d_adr = opendir(elem->abs_path)))
 		error("ft_ls: ", strerror(errno));
+	cur = (elem->fchild = (t_elem*)malloc(sizeof(t_elem)));
 	while ((d_stat = readdir(elem->d_adr)))
 	{
-		cur = (t_elem*)malloc(sizeof(t_elem));
+		cur->right = (t_elem*)malloc(sizeof(t_elem));
 		cur->path = ft_strdup(d_stat->d_name);
 		cur->parent = elem;
 		get_abs_path(cur);
 		stat(cur->abs_path, &cur->stat);
+		init_information(cur);
 		if (rec == 1 && (cur->is_dir = S_ISDIR(cur->stat.st_mode)))
 			if (ft_strcmp(cur->path, ".") != 0 &&
 					ft_strcmp(cur->path, "..") != 0)
@@ -58,5 +59,6 @@ void		core(t_ls *ls)
 		cur = ls->elem[x];
 		init_information(cur);
 		cur->is_dir == 1 ? dir_information(cur, ls->arg.rec) : 0;
+		print_information(cur, ls->arg);
 	}
 }
