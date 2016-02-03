@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 07:39:56 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/03 14:27:43 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/03 16:33:12 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	get_abs_path(t_elem *elem)
 	elem->abs_path[0] = '/';
 	ft_strncpy(&elem->abs_path[1], elem->path, len);
 	del = elem->abs_path;
-	elem->abs_path = ft_strjoin(elem->parent->path, elem->abs_path);
+	elem->abs_path = ft_strjoin(elem->parent->abs_path, elem->abs_path);
 	ft_strdel(&del);
 }
