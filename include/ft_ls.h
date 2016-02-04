@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/03 14:24:37 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/04 10:09:25 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ typedef struct		s_elem
 {
 	char			*path;
 	char			*abs_path;
+	char			*time;
+	char			*perm;
 	t_stat			stat;
 	int				is_dir;
 	DIR				*d_adr;

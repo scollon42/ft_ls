@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 14:02:19 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/03 16:45:38 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/04 10:15:30 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static void	print_list(t_elem *elem)
 {
+	ft_putstr(elem->perm);
+	ft_putchar(' ');
 	ft_putnbr(elem->stat.st_nlink);
 	ft_putchar(' ');
 	ft_putstr(elem->pwuid->pw_name);
@@ -21,6 +23,8 @@ static void	print_list(t_elem *elem)
 	ft_putstr(elem->grgid->gr_name);
 	ft_putchar(' ');
 	ft_putnbr(elem->stat.st_size);
+	ft_putchar(' ');
+	ft_putstr(elem->time);
 	ft_putchar(' ');
 }
 
