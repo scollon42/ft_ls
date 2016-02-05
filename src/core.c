@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 09:08:33 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/05 11:02:01 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/05 12:08:22 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	init_information(t_elem *elem)
 	elem->perm = get_permission(elem->stat);
 }
 
-static t_elem	*new_child(t_elem *parent, struct dirent *d_stat)
+static t_elem	*new_child(t_elem *parent, t_elem *left, struct dirent *d_stat)
 {
 	t_elem *child;
 
@@ -51,14 +51,15 @@ static t_elem	*new_child(t_elem *parent, struct dirent *d_stat)
 	stat(child->abs_path, &child->stat);
 	child->is_dir = child->stat.st_mode & S_IFDIR ? 1 : 0;
 	init_information(child);
-	child->left = NULL;
+	child->left = left;
 	child->right = NULL;
 	parent->fchild = child;
 	return (child);
 }
 
-static void	dir_information(t_elem *elem, int rec)
+static void	dir_information(t_elem *elem, t_arg arg)
 {
+	t_elem		*tmp;
 	t_elem		*cur;
 	struct dirent	*d_stat;
 
@@ -69,12 +70,13 @@ static void	dir_information(t_elem *elem, int rec)
 	while ((d_stat = readdir(elem->d_adr)))
 	{
 	//Here we create new_child
-		cur = new_child(elem, d_stat);
-	//Here we need to sort this new child
-		sort_child(cur, elem->fchild);
-		if (rec == 1 && cur->is_dir && !is_dot(cur->path))
-			dir_information(cur, rec);
+		cur = new_child(elem, tmp, d_stat);
+		if (arg.rec == 1 && cur->is_dir && !is_dot(cur->path))
+			dir_information(cur, arg);
+		tmp = cur;
+		cur = cur->right;
 	}
+	sort_list(elem, arg);
 	closedir(elem->d_adr) == -1 ? error("ft_ls: ", strerror(errno)) : 0;
 }
 
@@ -88,7 +90,7 @@ void		core(t_ls *ls)
 	{
 		cur = ls->elem[x];
 		init_information(cur);
-		cur->is_dir == 1 ? dir_information(cur, ls->arg.rec) : 0;
+		cur->is_dir == 1 ? dir_information(cur, ls->arg) : 0;
 		print_information(cur, ls->arg);
 	}
 }
