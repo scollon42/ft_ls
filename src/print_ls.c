@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 14:02:19 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/04 10:15:30 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/05 09:39:49 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ static void	print_list(t_elem *elem)
 	ft_putchar(' ');
 }
 
-static int	is_not_dot(char *path)
-{
-	return (ft_strcmp(path, ".") != 0 && ft_strcmp(path, "..") != 0);
-}
+
 
 static void	print_elem(t_elem *elem, t_arg arg)
 {
@@ -49,7 +46,7 @@ void		print_information(t_elem *elem, t_arg arg)
 		print_elem(elem, arg);
 	else
 	{
-		while (cur->right != NULL)
+		while (cur->left != NULL)
 		{
 			if (arg.all || ft_strncmp(cur->path, ".", 1))
 			{
@@ -58,7 +55,7 @@ void		print_information(t_elem *elem, t_arg arg)
 				ft_putchar(' ');
 				arg.lis == 1 ? ft_putchar('\n') : 0;
 			}
-			cur = cur->right;
+			cur = cur->left;
 		}
 		ft_putchar('\n');
 		arg.rec ? ft_putchar('\n') : 0;
@@ -67,9 +64,9 @@ void		print_information(t_elem *elem, t_arg arg)
 			cur = elem->fchild;
 			while (cur != NULL)
 			{
-				if (cur->is_dir && is_not_dot(cur->path))
+				if (cur->is_dir && !is_dot(cur->path))
 					print_information(cur, arg);
-				cur = cur->right;
+				cur = cur->left;
 			}
 		}
 	}

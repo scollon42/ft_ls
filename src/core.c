@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 09:08:33 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/04 10:16:15 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/05 11:02:01 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static char	*get_permission(t_stat stat)
 {
 	char	*perm;
-	
+
 	perm = ft_strnew(10);
 	perm[0] = stat.st_mode & S_IFDIR ? 'd' : '-';	
 	perm[1] = stat.st_mode & S_IRUSR ? 'r' : '-';	
@@ -38,39 +38,49 @@ static void	init_information(t_elem *elem)
 	elem->perm = get_permission(elem->stat);
 }
 
+static t_elem	*new_child(t_elem *parent, struct dirent *d_stat)
+{
+	t_elem *child;
+
+	if (!(child = (t_elem*)malloc(sizeof(t_elem))))
+		error("ft_ls: ", "malloc() failed");
+	if (!(child->path = ft_strdup(d_stat->d_name)))
+		error("ft_ls: ", "malloc() failed");
+	child->parent = parent;
+	get_abs_path(child);
+	stat(child->abs_path, &child->stat);
+	child->is_dir = child->stat.st_mode & S_IFDIR ? 1 : 0;
+	init_information(child);
+	child->left = NULL;
+	child->right = NULL;
+	parent->fchild = child;
+	return (child);
+}
+
 static void	dir_information(t_elem *elem, int rec)
 {
-	t_elem			*tmp;
-	t_elem			*cur;
+	t_elem		*cur;
 	struct dirent	*d_stat;
 
 	tmp = NULL;
+	elem->fchild = NULL;
 	if (!(elem->d_adr = opendir(elem->abs_path)))
 		error("ft_ls: ", strerror(errno));
-	cur = (elem->fchild = (t_elem*)malloc(sizeof(t_elem)));
 	while ((d_stat = readdir(elem->d_adr)))
 	{
-		cur->right = (t_elem*)malloc(sizeof(t_elem));
-		cur->path = ft_strdup(d_stat->d_name);
-		cur->parent = elem;
-		get_abs_path(cur);
-		stat(cur->abs_path, &cur->stat);
-		init_information(cur);
-		if (rec == 1 && (cur->is_dir = S_ISDIR(cur->stat.st_mode)))
-			if (ft_strcmp(cur->path, ".") != 0 &&
-					ft_strcmp(cur->path, "..") != 0)
-				dir_information(cur, rec);
-		cur->left = tmp;
-		tmp = cur;
-		cur = cur->right;
+	//Here we create new_child
+		cur = new_child(elem, d_stat);
+	//Here we need to sort this new child
+		sort_child(cur, elem->fchild);
+		if (rec == 1 && cur->is_dir && !is_dot(cur->path))
+			dir_information(cur, rec);
 	}
-	cur = NULL;
 	closedir(elem->d_adr) == -1 ? error("ft_ls: ", strerror(errno)) : 0;
 }
 
 void		core(t_ls *ls)
 {
-	int			x;
+	int		x;
 	t_elem		*cur;
 
 	x = -1;

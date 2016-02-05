@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/04 10:09:25 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/05 09:35:28 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ typedef struct		s_ls
 void				read_arg(t_ls *ls, const int ac, char **av);
 void				parse_arg(t_ls *ls);
 void				get_abs_path(t_elem *elem);
+int				is_dot(char *path);
 void				core(t_ls *ls);
 void				print_information(t_elem *elem, t_arg arg);
 void				error(char *type, char *error);
