@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 14:02:19 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/05 09:39:49 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/06 12:03:26 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	print_list(t_elem *elem)
 	ft_putstr(elem->grgid->gr_name);
 	ft_putchar(' ');
 	ft_putnbr(elem->stat.st_size);
-	ft_putchar(' ');
+	ft_putchar('	');
 	ft_putstr(elem->time);
 	ft_putchar(' ');
 }
@@ -46,7 +46,7 @@ void		print_information(t_elem *elem, t_arg arg)
 		print_elem(elem, arg);
 	else
 	{
-		while (cur->left != NULL)
+		while (cur != NULL)
 		{
 			if (arg.all || ft_strncmp(cur->path, ".", 1))
 			{
@@ -55,7 +55,7 @@ void		print_information(t_elem *elem, t_arg arg)
 				ft_putchar(' ');
 				arg.lis == 1 ? ft_putchar('\n') : 0;
 			}
-			cur = cur->left;
+			cur = cur->right;
 		}
 		ft_putchar('\n');
 		arg.rec ? ft_putchar('\n') : 0;
@@ -66,7 +66,7 @@ void		print_information(t_elem *elem, t_arg arg)
 			{
 				if (cur->is_dir && !is_dot(cur->path))
 					print_information(cur, arg);
-				cur = cur->left;
+				cur = cur->right;
 			}
 		}
 	}

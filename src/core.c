@@ -6,13 +6,13 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 09:08:33 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/05 12:08:22 by                  ###   ########.fr       */
+/*   Updated: 2016/02/06 11:56:15 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static char	*get_permission(t_stat stat)
+static char		*get_permission(t_stat stat)
 {
 	char	*perm;
 
@@ -30,7 +30,7 @@ static char	*get_permission(t_stat stat)
 	return (perm);
 }
 
-static void	init_information(t_elem *elem)
+static void		init_information(t_elem *elem)
 {
 	elem->pwuid = getpwuid(elem->stat.st_uid);
 	elem->grgid = getgrgid(elem->stat.st_gid);
@@ -38,7 +38,7 @@ static void	init_information(t_elem *elem)
 	elem->perm = get_permission(elem->stat);
 }
 
-static t_elem	*new_child(t_elem *parent, t_elem *left, struct dirent *d_stat)
+static t_elem	*new_child(t_elem *par, struct dirent *d_stat)
 {
 	t_elem *child;
 
@@ -46,41 +46,46 @@ static t_elem	*new_child(t_elem *parent, t_elem *left, struct dirent *d_stat)
 		error("ft_ls: ", "malloc() failed");
 	if (!(child->path = ft_strdup(d_stat->d_name)))
 		error("ft_ls: ", "malloc() failed");
-	child->parent = parent;
+	child->parent = par;
 	get_abs_path(child);
-	stat(child->abs_path, &child->stat);
-	child->is_dir = child->stat.st_mode & S_IFDIR ? 1 : 0;
-	init_information(child);
-	child->left = left;
-	child->right = NULL;
-	parent->fchild = child;
+	if (stat(child->abs_path, &child->stat) == -1)
+		ft_putendl_fd(strerror(errno), 2);
+	else
+	{
+		child->is_dir = child->stat.st_mode & S_IFDIR ? 1 : 0;
+		init_information(child);
+		child->right = NULL;
+		child->fchild = NULL;
+	}
 	return (child);
 }
 
-static void	dir_information(t_elem *elem, t_arg arg)
+static void		dir_information(t_elem *elem, t_arg arg)
 {
-	t_elem		*tmp;
-	t_elem		*cur;
+	t_elem			*tmp;
+	t_elem			*cur;
 	struct dirent	*d_stat;
 
-	tmp = NULL;
-	elem->fchild = NULL;
 	if (!(elem->d_adr = opendir(elem->abs_path)))
 		error("ft_ls: ", strerror(errno));
+	d_stat = readdir(elem->d_adr);
+	elem->fchild = new_child(elem, d_stat);
+	cur = elem->fchild;
+	cur->left = NULL;
 	while ((d_stat = readdir(elem->d_adr)))
 	{
-	//Here we create new_child
-		cur = new_child(elem, tmp, d_stat);
+		tmp = cur;
+		cur->right = new_child(elem, d_stat);
+		cur = cur->right;
+		cur->left = tmp;
 		if (arg.rec == 1 && cur->is_dir && !is_dot(cur->path))
 			dir_information(cur, arg);
-		tmp = cur;
-		cur = cur->right;
 	}
-	sort_list(elem, arg);
+	!arg.uso ? sort_list(elem->fchild, arg) : 0;
 	closedir(elem->d_adr) == -1 ? error("ft_ls: ", strerror(errno)) : 0;
 }
 
-void		core(t_ls *ls)
+void			core(t_ls *ls)
 {
 	int		x;
 	t_elem		*cur;

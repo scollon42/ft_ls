@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:36 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/03 07:28:44 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/06 11:56:39 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static void	read_option(t_ls *ls, char *opt)
 		opt[i] == 'r' ? ls->arg.rev = 1 : 0;
 		opt[i] == 'G' ? ls->arg.col = 1 : 0;
 		opt[i] == 'f' ? ls->arg.uso = 1 : 0;
+		opt[i] == 'f' ? ls->arg.all = 1 : 0;
 		opt[i] == 'd' ? ls->arg.donly = 1 : 0;
 		opt[i] == 'i' ? ls->arg.ino = 1 : 0;
 	}

@@ -6,32 +6,39 @@
 /*   By: scollon <scollon42@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/05 10:46:46 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/05 12:08:08 by                  ###   ########.fr       */
+/*   Updated: 2016/02/06 11:50:46 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	sort_list(t_elem *elem, t_arg arg)
+static void	swap_elem(t_elem *e1, t_elem *e2)
 {
 	t_elem	*tmp;
+
+	tmp = e1->left;
+	e1->left = e2;
+	tmp->right = e2;
+	e2->left = tmp;
+	tmp = e2->right;
+	e2->right = e1;
+	tmp->left = e1;
+	e1->right = tmp;
+}
+
+void		sort_list(t_elem *list, t_arg arg)
+{
 	t_elem	*cur;
 
-	tmp = NULL;
-	cur = elem->fchild;
+	cur = list;
 	(void)arg;
-	while (cur->left != NULL)
+	while (cur->right != NULL)
 	{
-		if (ft_strcmp(cur->path, cur->left->path) > 0)
+		if (ft_strcmp(cur->path, cur->right->path) > 0)
 		{
-			tmp = cur->right;
-			cur->right = cur->left->right;
-			cur->left->right = tmp;
-			tmp = cur->left;
-			cur->left = cur->left->left;
-			cur->left->left = tmp;
-			cur = elem->fchild;
+			swap_elem(cur, cur->right);
+			cur = list;
 		}
-		cur = cur->left;
+		cur = cur->right;
 	}
 }
