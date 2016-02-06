@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 09:08:33 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/06 11:56:15 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/06 12:16:25 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ static void		dir_information(t_elem *elem, t_arg arg)
 		cur = cur->right;
 		cur->left = tmp;
 		if (arg.rec == 1 && cur->is_dir && !is_dot(cur->path))
-			dir_information(cur, arg);
+			if (arg.all || ft_strncmp(cur->path, ".", 1) != 0)
+				dir_information(cur, arg);
 	}
 	!arg.uso ? sort_list(elem->fchild, arg) : 0;
 	closedir(elem->d_adr) == -1 ? error("ft_ls: ", strerror(errno)) : 0;
@@ -87,7 +88,7 @@ static void		dir_information(t_elem *elem, t_arg arg)
 
 void			core(t_ls *ls)
 {
-	int		x;
+	int			x;
 	t_elem		*cur;
 
 	x = -1;
