@@ -20,8 +20,8 @@ NAME 			= ft_ls
 CC 				= gcc
 CFGLAGS 		= -Werror -Wextra -Wall
 
-SRC_NAME 		= main.c read_arg.c parse_arg.c sort_arg.c core.c  \
-				  sort_dir.c print_ls.c utils.c error.c \
+SRC_NAMEe		= main.c read_arg.c parse_arg.c sort.c core.c  \
+				  sort_condition.c print_ls.c utils.c error.c \
 
 OBJ_NAME 		= $(SRC_NAME:.c=.o)
 

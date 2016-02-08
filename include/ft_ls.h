@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/08 07:41:17 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/08 09:24:58 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void				parse_arg(t_ls *ls);
 void				get_abs_path(t_elem *elem);
 int					is_dot(char *path);
 void				core(t_ls *ls);
+int					sort_condition(t_elem *e1, t_elem *e2, t_arg arg);
 void				sort_arg(t_elem **arg_lst, int argnb, t_arg arg);
 void				sort_dir(t_elem *dir, t_arg arg);
 void				print_information(t_elem *elem, t_arg arg);

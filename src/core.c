@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 09:08:33 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/08 07:53:31 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/08 09:42:27 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,13 +74,15 @@ static void		dir_information(t_elem *elem, t_arg arg)
 	cur->left = NULL;
 	while ((d_stat = readdir(elem->d_adr)))
 	{
-		tmp = cur;
-		cur->right = new_child(elem, d_stat);
-		cur = cur->right;
-		cur->left = tmp;
-		if (arg.rec == 1 && cur->is_dir && !is_dot(cur->path))
-			if (arg.all || ft_strncmp(cur->path, ".", 1) != 0)
-				dir_information(cur, arg);
+		if (arg.all || ft_strncmp(d_stat->d_name, ".", 1) != 0)
+		{
+			tmp = cur;
+			cur->right = new_child(elem, d_stat);
+			cur = cur->right;
+			cur->left = tmp;
+			if (arg.rec == 1 && cur->is_dir && !is_dot(cur->path))
+					dir_information(cur, arg);
+		}
 	}
 	!arg.uso ? sort_dir(elem->fchild, arg) : 0;
 	closedir(elem->d_adr) == -1 ? error("ft_ls: ", strerror(errno)) : 0;
