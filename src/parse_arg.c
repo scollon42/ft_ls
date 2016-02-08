@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/03 13:56:02 by scollon          ###   ########.fr       */
+/*   Updated: 2016/02/08 07:53:26 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ void			parse_arg(t_ls *ls)
 			ls->elem[++ls->fnb] = new_elem(ls->arg.name[i], s);
 	}
 	free(ls->arg.name);
+	sort_arg(ls->elem, ls->fnb, ls->arg);
 	ls->enb > 0 ? print_error(ls->error, ls->arg.uso) : 0;
 }

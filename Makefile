@@ -20,15 +20,16 @@ NAME 			= ft_ls
 CC 				= gcc
 CFGLAGS 		= -Werror -Wextra -Wall
 
-SRC_NAME 		= main.c read_arg.c parse_arg.c core.c sort.c print_ls.c utils.c \
-				  error.c
+SRC_NAME 		= main.c read_arg.c parse_arg.c sort_arg.c core.c  \
+				  sort_dir.c print_ls.c utils.c error.c \
+
 OBJ_NAME 		= $(SRC_NAME:.c=.o)
 
 LIB 			= $(LIB_PATH)libft.a
 
-SRC			= $(addprefix $(SRC_PATH), $(SRC_NAME))
+SRC				= $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ 			= $(addprefix $(OBJ_PATH), $(OBJ_NAME))
-INC			= $(addprefix -I,$(INC_PATH))
+INC				= $(addprefix -I,$(INC_PATH))
 INC_LIBFT 		= $(addprefix -I,$(INC_LIBFT_PATH))
 
 all: $(NAME)

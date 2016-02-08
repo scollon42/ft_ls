@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_dir.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: scollon <scollon42@student.42.fr>          +#+  +:+       +#+        */
+/*   By: scollon <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/02/05 10:46:46 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/06 12:34:58 by scollon          ###   ########.fr       */
+/*   Created: 2016/02/08 07:37:03 by scollon           #+#    #+#             */
+/*   Updated: 2016/02/08 07:37:46 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ static int	sort_condition(t_elem *e1, t_elem *e2, t_arg arg)
 	return ((ft_strcmp(e1->path, e2->path) > 0));
 }
 
-void		sort_list(t_elem *list, t_arg arg)
+void		sort_dir(t_elem *dir, t_arg arg)
 {
 	t_elem	*cur;
 
-	cur = list;
+	cur = dir;
 	while (cur->right != NULL)
 	{
 		if (sort_condition(cur, cur->right, arg))
 		{
 			swap_elem(cur, cur->right);
-			cur = list;
+			cur = dir;
 		}
 		cur = cur->right;
 	}
