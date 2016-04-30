@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/08 08:33:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/08 09:27:52 by scollon          ###   ########.fr       */
+/*   Updated: 2016/04/30 09:11:26 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,14 @@ void        sort_dir(t_elem *dir, t_arg arg)
 	t_elem  *cur;
 
 	cur = dir;
+	(void)arg;
 	while (cur->right != NULL)
 	{
-		if (sort_condition(cur, cur->right, arg))	
-		{
-			swap_elem(cur, cur->right);
-			cur = dir;
-		}
+		// if (sort_condition(cur, cur->right, arg))
+		// {
+		// 	swap_elem(cur, cur->right);
+		// 	cur = dir;
+		// }
 		cur = cur->right;
 	}
 }

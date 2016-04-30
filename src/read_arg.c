@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:36 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/06 11:56:39 by scollon          ###   ########.fr       */
+/*   Updated: 2016/04/30 09:01:57 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ void		read_arg(t_ls *ls, const int ac, char **av)
 	while (++i < ac && av[i][0] == '-' && av[i][1] != '\0')
 		read_option(ls, av[i]);
 	if ((ls->arg.name = (char**)malloc(sizeof(char*) * ac - i)) == NULL)
-		error("Malloc(): ", strerror(ENOMEM));
+		error(E_MALLOC, NULL, 1);
 	if (i == ac)
 	{
 		if (!(ls->arg.name[ls->arg.fnb++] = ft_strdup(".")))
-			error("Malloc(): ", strerror(ENOMEM));
+			error(E_MALLOC, NULL, 1);	
 	}
 	else
 	{
 		while (i < ac)
 		{
 			if (!(ls->arg.name[ls->arg.fnb++] = ft_strdup(av[i])))
-				error("Malloc(): ", strerror(ENOMEM));
+				error(E_MALLOC, NULL, 1);
 			i++;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:41:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/08 07:51:18 by scollon          ###   ########.fr       */
+/*   Updated: 2016/04/30 09:01:11 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static t_ls	*init_ls(int ac)
 {
 	t_ls	*new;
 
-	new = (t_ls *)malloc(sizeof(t_ls));
-	if (new == NULL)
-		error("Malloc():", strerror(ENOMEM));
+	srand(time(NULL));
+	if (!(new = (t_ls *)malloc(sizeof(t_ls))))
+		error(E_MALLOC, NULL, 1);
 	new->arg.rec = 0;
 	new->arg.lis = 0;
 	new->arg.all = 0;
@@ -40,5 +40,5 @@ int			main(int ac, char **av)
 	read_arg(ls, ac, av);
 	parse_arg(ls);
 	core(ls);
-	return (0);
+	return (EXIT_SUCCESS);
 }

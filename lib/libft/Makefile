@@ -6,7 +6,7 @@
 #    By: scollon <scollon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 13:40:40 by scollon           #+#    #+#              #
-#    Updated: 2016/01/29 14:31:02 by scollon          ###   ########.fr        #
+#    Updated: 2016/04/30 08:55:02 by scollon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #
 SRC_PATH = ./src/
 OBJ_PATH = ./obj/
-INC_PATH = ./includes/
+INC_PATH = ./include/
 
 NAME = libft.a
 CC = gcc

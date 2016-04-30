@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/08 09:24:58 by scollon          ###   ########.fr       */
+/*   Updated: 2016/04/30 09:01:21 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FT_LS_H
 
 # include <libft.h>
+# include <libftprintf.h>
+# include <error_ft.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -89,6 +91,5 @@ int					sort_condition(t_elem *e1, t_elem *e2, t_arg arg);
 void				sort_arg(t_elem **arg_lst, int argnb, t_arg arg);
 void				sort_dir(t_elem *dir, t_arg arg);
 void				print_information(t_elem *elem, t_arg arg);
-void				error(char *type, char *error);
 
 #endif

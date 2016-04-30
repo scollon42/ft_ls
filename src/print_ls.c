@@ -6,26 +6,16 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 14:02:19 by scollon           #+#    #+#             */
-/*   Updated: 2016/02/06 12:12:45 by scollon          ###   ########.fr       */
+/*   Updated: 2016/04/30 09:27:29 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void	print_list(t_elem *elem)
+static void	print_list(t_elem *e)
 {
-	ft_putstr(elem->perm);
-	ft_putchar(' ');
-	ft_putnbr(elem->stat.st_nlink);
-	ft_putchar(' ');
-	ft_putstr(elem->pwuid->pw_name);
-	ft_putchar(' ');
-	ft_putstr(elem->grgid->gr_name);
-	ft_putchar(' ');
-	ft_putnbr(elem->stat.st_size);
-	ft_putchar('	');
-	ft_putstr(elem->time);
-	ft_putchar(' ');
+	ft_printf("%s  %d %s ", e->perm, e->stat.st_nlink, e->pwuid->pw_name);
+	ft_printf("%s  %5d %s ", e->grgid->gr_name, e->stat.st_size, e->time);
 }
 
 
