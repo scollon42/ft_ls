@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/02 09:08:33 by scollon           #+#    #+#             */
-/*   Updated: 2016/05/31 11:25:41 by scollon          ###   ########.fr       */
+/*   Updated: 2016/05/31 11:47:35 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ static t_elem	*new_child(t_elem *par, struct dirent *d_stat)
 
 static void		dir_information(t_elem *elem, t_arg arg)
 {
-	t_elem			*tmp;
 	t_elem			*cur;
 	struct dirent	*d_stat;
 
+	// ft_printf("\n\n");
 	if (!(elem->data->d_adr = opendir(elem->data->abs_path)))
 		error(strerror(errno), elem->data->abs_path, 1);
 	if ((d_stat = readdir(elem->data->d_adr)) == NULL)
@@ -79,14 +79,15 @@ static void		dir_information(t_elem *elem, t_arg arg)
 	{
 		if (arg.all || ft_strncmp(d_stat->d_name, ".", 1) != 0)
 		{
-			tmp = cur;
 			cur->right = new_child(elem, d_stat);
+			cur->right->left = cur;
 			cur = cur->right;
-			cur->left = tmp;
+			// ft_printf("%s ", cur->data->abs_path);
 			if (arg.rec == 1 && cur->data->is_dir && !is_dot(cur->data->path))
 					dir_information(cur, arg);
 		}
 	}
+	// ft_printf("\n");
 	!arg.uso ? sort_directory(elem->fchild, arg) : 0;
 	closedir(elem->data->d_adr) == -1 ? error(strerror(errno), elem->data->abs_path, 1) : 0;
 }

@@ -52,3 +52,10 @@ Error: 31/05/2016 [08:19:00] - No such file or directory: "//Applications/Adobe 
 Error: 31/05/2016 [11:16:55] - malloc() failed
 Error: 31/05/2016 [11:16:57] - malloc() failed
 Error: 31/05/2016 [11:17:17] - malloc() failed
+Error: 31/05/2016 [11:35:40] - No such file or directory: "/nfs/2015/s/scollon/Library/Containers/com.apple.appstore.PluginXPCService/Data/Documents/iChats"
+Error: 31/05/2016 [11:35:40] - No such file or directory: "/nfs/2015/s/scollon/Library/Containers/com.apple.appstore.PluginXPCService/Data/Library/KeyBindings"
+Error: 31/05/2016 [11:35:40] - No such file or directory: "/nfs/2015/s/scollon/Library/Containers/com.apple.appstore.PluginXPCService/Data/Library/Input Methods"
+Error: 31/05/2016 [11:35:40] - No such file or directory: "/nfs/2015/s/scollon/Library/Containers/com.apple.appstore.PluginXPCService/Data/Library/Images/People"
+Error: 31/05/2016 [11:35:40] - No such file or directory: "/nfs/2015/s/scollon/Library/Containers/com.apple.appstore.PluginXPCService/Data/Library/ColorPickers"
+Error: 31/05/2016 [11:35:41] - No such file or directory: "/nfs/2015/s/scollon/Library/Containers/com.apple.appstore.PluginXPCService/Data/Library/Application Support/iCloud"
+Error: 31/05/2016 [11:35:41] - No such file or directory: "/nfs/2015/s/scollon/Library/Containers/com.apple.appstore.PluginXPCService/Data/Library/Application Support/iCloud"
