@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_arg.c                                        :+:      :+:    :+:   */
+/*   parse_arguments.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:58 by scollon           #+#    #+#             */
-/*   Updated: 2016/04/30 09:18:12 by scollon          ###   ########.fr       */
+/*   Updated: 2016/05/31 11:24:04 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,17 @@ static t_elem	*new_elem(char *path, t_stat stat)
 
 	if (!(new = (t_elem*)malloc(sizeof(t_elem))))
 		error(E_MALLOC, NULL, 1);
-	new->path = ft_strdup(path);
-	new->abs_path = ft_strdup(path);
-	ft_strdel(&path);
-	if (new->path == NULL)
+	if (!(new->data = (t_data*)malloc(sizeof(t_data))))
 		error(E_MALLOC, NULL, 1);
-	new->stat = stat;
-	new->is_dir = S_ISDIR(new->stat.st_mode) ? 1 : 0;
-	new->d_adr = NULL;
+	// ft_printf("%s ", path);
+	new->data->path = ft_strdup(path);
+	new->data->abs_path = ft_strdup(path);
+	ft_strdel(&path);
+	if (new->data->path == NULL || new->data->abs_path == NULL)
+		error(E_MALLOC, NULL, 1);
+	new->data->stat = stat;
+	new->data->is_dir = S_ISDIR(new->data->stat.st_mode) ? 1 : 0;
+	new->data->d_adr = NULL;
 	new->fchild = NULL;
 	new->parent = NULL;
 	new->left = NULL;
@@ -79,7 +82,7 @@ static t_err	*new_error(char *path, t_err *prev)
 	return (new);
 }
 
-void			parse_arg(t_ls *ls)
+void			parse_arguments(t_ls *ls)
 {
 	int		i;
 	t_stat	s;
@@ -104,6 +107,6 @@ void			parse_arg(t_ls *ls)
 			ls->elem[++ls->fnb] = new_elem(ls->arg.name[i], s);
 	}
 	free(ls->arg.name);
-	sort_arg(ls->elem, ls->fnb, ls->arg);
+	sort_arguments(ls->elem, ls->fnb, ls->arg);
 	ls->enb > 0 ? print_error(ls->error, ls->arg.uso) : 0;
 }

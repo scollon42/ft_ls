@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_arg.c                                         :+:      :+:    :+:   */
+/*   read_arguments.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 12:45:36 by scollon           #+#    #+#             */
-/*   Updated: 2016/04/30 09:01:57 by scollon          ###   ########.fr       */
+/*   Updated: 2016/05/31 08:36:45 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	read_option(t_ls *ls, char *opt)
 	}
 }
 
-void		read_arg(t_ls *ls, const int ac, char **av)
+void		read_arguments(t_ls *ls, const int ac, char **av)
 {
 	int		i;
 
@@ -59,7 +59,7 @@ void		read_arg(t_ls *ls, const int ac, char **av)
 	if (i == ac)
 	{
 		if (!(ls->arg.name[ls->arg.fnb++] = ft_strdup(".")))
-			error(E_MALLOC, NULL, 1);	
+			error(E_MALLOC, NULL, 1);
 	}
 	else
 	{

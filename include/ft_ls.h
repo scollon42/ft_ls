@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/01 09:39:28 by scollon           #+#    #+#             */
-/*   Updated: 2016/04/30 09:01:21 by scollon          ###   ########.fr       */
+/*   Updated: 2016/05/31 10:48:31 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct		s_arg
 	short			ino;
 }					t_arg;
 
-typedef struct		s_elem
+typedef struct		s_data
 {
 	char			*path;
 	char			*abs_path;
@@ -60,6 +60,11 @@ typedef struct		s_elem
 	DIR				*d_adr;
 	struct passwd	*pwuid;
 	struct group	*grgid;
+}					t_data;
+
+typedef struct		s_elem
+{
+	t_data			*data;
 	struct s_elem	*parent;
 	struct s_elem	*fchild;
 	struct s_elem	*right;
@@ -82,14 +87,14 @@ typedef struct		s_ls
 	int				fnb;
 }					t_ls;
 
-void				read_arg(t_ls *ls, const int ac, char **av);
-void				parse_arg(t_ls *ls);
+void				read_arguments(t_ls *ls, const int ac, char **av);
+void				parse_arguments(t_ls *ls);
 void				get_abs_path(t_elem *elem);
 int					is_dot(char *path);
 void				core(t_ls *ls);
 int					sort_condition(t_elem *e1, t_elem *e2, t_arg arg);
-void				sort_arg(t_elem **arg_lst, int argnb, t_arg arg);
-void				sort_dir(t_elem *dir, t_arg arg);
+void				sort_arguments(t_elem **arg_lst, int argnb, t_arg arg);
+void				sort_directory(t_elem *dir, t_arg arg);
 void				print_information(t_elem *elem, t_arg arg);
 
 #endif
