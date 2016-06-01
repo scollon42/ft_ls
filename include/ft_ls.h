@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 15:10:08 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/01 16:17:59 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,13 @@ typedef struct		s_data
 {
 	char			*name;
 	char			*path;
+	char			*time;
+	char			*perm;
+	int				is_dir;
+	DIR				*d_adr;
 	t_stat			stat;
+	struct passwd	*pwuid;
+	struct group	*grgid;
 }					t_data;
 
 typedef struct		s_elem
@@ -69,9 +75,8 @@ int			is_activated(int option, char c);
 char		**get_files(int offset, int ac, char **av);
 t_elem		*parse_file_list(char **files);
 void		add_item_to_list(t_elem **felem, t_elem *new);
-t_elem		*new_item(char *name, t_stat stat);
+t_elem		*new_item(char *name, char *path, t_stat stat);
 void		sort_list(t_elem *felem);
-
-
+void		read_list(t_elem **felem, int option);
 
 #endif

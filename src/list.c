@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 15:10:57 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/01 16:14:01 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		add_item_to_list(t_elem **felem, t_elem *new)
 	cur = NULL;
 }
 
-t_elem	*new_item(char *name, t_stat stat)
+t_elem	*new_item(char *name, char *path, t_stat stat)
 {
 	t_elem	*new;
 
@@ -39,7 +39,8 @@ t_elem	*new_item(char *name, t_stat stat)
 	if (!(new->data = (t_data*)malloc(sizeof(t_data))))
 		return (NULL);
 	new->data->name = ft_strdup(name);
-	new->data->path = NULL;
+	if (path)
+		new->data->path = ft_strdup(path);
 	new->data->stat = stat;
 	new->next = NULL;
 	return (new);
@@ -50,8 +51,10 @@ void		sort_list(t_elem *felem)
 	t_data	*tmp;
 	t_elem	*cur;
 
-	cur = felem->next;
-	while (cur)
+	if (!felem)
+		return ;
+	cur = felem;
+	while ((cur = cur->next))
 	{
 		if (ft_strcmp(cur->data->name, cur->prev->data->name) < 0)
 		{
@@ -60,6 +63,5 @@ void		sort_list(t_elem *felem)
 			cur->prev->data = tmp;
 			cur = felem;
 		}
-		cur = cur->next;
 	}
 }
