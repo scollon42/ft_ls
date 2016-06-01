@@ -6,7 +6,7 @@
 #    By: scollon <scollon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/01 10:19:30 by scollon           #+#    #+#              #
-#    Updated: 2016/05/31 08:37:35 by scollon          ###   ########.fr        #
+#    Updated: 2016/06/01 15:22:10 by scollon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,8 @@ NAME 			= ft_ls
 CC 				= gcc
 CFGLAGS 		= -Werror -Wextra -Wall
 
-SRC_NAME		= main.c read_arguments.c parse_arguments.c sort_directory.c \
-				  sort_arguments.c core.c sort_condition.c print_ls.c \
-				  utils.c error.c
+SRC_NAME		= 	main.c get_option.c get_files.c parse_file_list.c list.c \
+					read_list.c
 
 OBJ_NAME 		= $(SRC_NAME:.c=.o)
 
@@ -39,8 +38,8 @@ LIB				= $(addprefix -L$(LIB_PATH),$(LIB_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	make -C $(LIB_PATH)libft -j
-	make -C $(LIB_PATH)libftprintf -j
+	make -C $(LIB_PATH)libft -j8
+	make -C $(LIB_PATH)libftprintf -j8
 	$(CC) $(CFLGS) $(LIB) -lft -lftprintf $(INC) $(OBJ) -o $(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
