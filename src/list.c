@@ -6,12 +6,15 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 16:14:01 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/01 19:08:23 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
+/*
+**	Simple function used to push back an item in t_elem list
+*/
 void		add_item_to_list(t_elem **felem, t_elem *new)
 {
 	t_elem		*cur;
@@ -30,6 +33,10 @@ void		add_item_to_list(t_elem **felem, t_elem *new)
 	cur = NULL;
 }
 
+/*
+**	Function used to allocate a new t_elem and return it.
+**	in case of error -> return NULL
+*/
 t_elem	*new_item(char *name, char *path, t_stat stat)
 {
 	t_elem	*new;
@@ -45,7 +52,9 @@ t_elem	*new_item(char *name, char *path, t_stat stat)
 	new->next = NULL;
 	return (new);
 }
-
+/*
+**	Temporary function used to sort a t_elem list
+*/
 void		sort_list(t_elem *felem)
 {
 	t_data	*tmp;

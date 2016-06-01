@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:59:52 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 15:00:40 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/01 19:12:12 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,11 @@ static int		add_option(int option, int pos, char *valid)
 	return (option | tmp);
 }
 
-int				is_activated(int option, char c)
-{
-	int		tmp;
-	int		pos;
-
-	tmp = 1;
-	pos = get_postion(c);
-	tmp = tmp << pos;
-	return (option & tmp);
-}
-
+/*
+**	This function is usefull to create a binary options map.
+**	we check option given in parameters and compute an int.
+**	For example if -Ra is send option will be 0001 0001 (Or 17)
+*/
 int				get_option(int ac, char **av, int *offset)
 {
 	int			i;

@@ -6,12 +6,15 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 13:18:15 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 13:24:29 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/01 19:13:12 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
+/*
+**	Function used to read av tab and get files on it
+*/
 char	**get_files(int offset, int ac, char **av)
 {
 	int		i;

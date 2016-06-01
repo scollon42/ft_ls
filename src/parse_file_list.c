@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 13:29:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 16:12:38 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/01 19:05:13 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ static void		print_error_list(t_elem **err)
 	}
 }
 
+/*
+**	Here we need to create two list with files given in parameters.
+**	One list will be a valid list with files and the other is a error
+**	list that contains invalid files. At the end we sort both and print
+**	the error list.
+*/
 t_elem			*parse_file_list(char **files)
 {
 	int			i;
