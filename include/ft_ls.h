@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 11:30:07 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:46:08 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define IS_LISTMOD(opt) opt & 2 ? 1 : 0
 # define IS_REVERSE(opt) opt & 4 ? 1 : 0
 # define IS_TIMESORT(opt) opt & 8 ? 1 : 0
-# define IS_UNSORT(opt) opt & 16 ? 1 : 0
+# define IS_NOHIDE(opt) opt & 16 ? 1 : 0
 
 /*
 **	error function define
@@ -80,8 +80,10 @@ t_elem					*new_item(char *name, char *path, t_stat stat);
 void					sort_list(t_elem *felem, const int option);
 void					read_list(t_elem **felem, const int option);
 int						is_dot_directory(char *name);
-int						is_hidden(char *name);
+int						is_hidden(char *name, const int option);
 char					*full_path(char *name, char *parent_path);
+void					free_list(t_elem **list);
+void					print_elem(t_elem *elem, const int option);
 void					error(char *type, char *esrc, short ext);
 
 #endif

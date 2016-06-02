@@ -1,0 +1,318 @@
+Error: 02/06/2016 [09:33:39] - Error: 02/06/2016 [09:33:52] - Error: 02/06/2016 [09:43:04] - sr: No such file or directory
+Error: 02/06/2016 [09:44:26] - srf: No such file or directory
+Error: 02/06/2016 [10:04:40] - /Applications/A: No such file or directory
+Error: 02/06/2016 [10:09:53] - /Ad: No such file or directory
+Error: 02/06/2016 [10:10:10] - Applications: No such file or directory
+Error: 02/06/2016 [11:20:06] - ./include/ft_ls.h: Not a directory
+Error: 02/06/2016 [11:20:34] - src/get_files.c: Not a directory
+Error: 02/06/2016 [11:44:54] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [11:45:30] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [11:47:50] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [11:47:50] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [11:47:50] - //.fseventsd: Permission denied
+Error: 02/06/2016 [11:47:50] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [11:47:50] - //.Trashes: Permission denied
+Error: 02/06/2016 [13:42:48] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [13:42:48] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [13:42:48] - //.fseventsd: Permission denied
+Error: 02/06/2016 [13:42:48] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [13:42:48] - //.Trashes: Permission denied
+Error: 02/06/2016 [14:16:17] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [14:16:17] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [14:16:17] - //.fseventsd: Permission denied
+Error: 02/06/2016 [14:16:17] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [14:16:17] - //.Trashes: Permission denied
+Error: 02/06/2016 [14:22:27] - /Applications/Thingz Arduino.app/Contents/Resources/Java/examples/BoutonAllumeLed: Permission denied
+Error: 02/06/2016 [14:22:27] - /Applications/Thingz Arduino.app/Contents/Resources/Java/examples/Clignottement: Permission denied
+Error: 02/06/2016 [14:22:27] - /Applications/Thingz Arduino.app/Contents/Resources/Java/examples/HappyBirthday: Permission denied
+Error: 02/06/2016 [14:34:43] - //.DS_Store: Not a directory
+Error: 02/06/2016 [14:34:43] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [14:34:43] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [14:34:43] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [14:34:43] - //.Trashes: Permission denied
+Error: 02/06/2016 [14:34:43] - //.com.apple.timemachine.donotpresent: Not a directory
+Error: 02/06/2016 [14:34:43] - //.file: Not a directory
+Error: 02/06/2016 [14:34:43] - //.fseventsd: Permission denied
+Error: 02/06/2016 [14:34:43] - //.gem/specs/rubygems.org%443/latest_specs.4.8: Not a directory
+Error: 02/06/2016 [14:34:43] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/bundler-1.11.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:43] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:44] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:44] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:44] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:44] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:44] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.5.gemspec: Not a directory
+Error: 02/06/2016 [14:34:44] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.Error: 02/06/2016 [14:34:47] - //.DS_Store: Not a directory
+Error: 02/06/2016 [14:34:47] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [14:34:47] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [14:34:47] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [14:34:47] - //.Trashes: Permission denied
+Error: 02/06/2016 [14:34:47] - //.com.apple.timemachine.donotpresent: Not a directory
+Error: 02/06/2016 [14:34:47] - //.file: Not a directory
+Error: 02/06/2016 [14:34:47] - //.fseventsd: Permission denied
+Error: 02/06/2016 [14:34:47] - //.gem/specs/rubygems.org%443/latest_specs.4.8: Not a directory
+Error: 02/06/2016 [14:34:47] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/bundler-1.11.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:47] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:48] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:48] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:48] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:48] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:48] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.5.gemspec: Not a directory
+Error: 02/06/2016 [14:34:48] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.6.gemspec: Not a directory
+Error: 02/06/2016 [14:34:48] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.7.gemspec: Not a directory
+Error: 02/06/2016 [14:34:49] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.8.gemspec: Not a directory
+Error: 02/06/2016 [14:34:49] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.2.9.gemspec: Not a directory
+Error: 02/06/2016 [14:34:49] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.3.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:49] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.3.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:49] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.3.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:49] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.3.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:49] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.3.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:50] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/chunky_png-1.3.5.gemspec: Not a directory
+Error: 02/06/2016 [14:34:50] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/compass-1.0.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:50] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/compass-core-1.0.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:50] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/compass-import-once-1.0.5.gemspec: Not a directory
+Error: 02/06/2016 [14:34:50] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.5.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:50] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.5.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:50] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.5.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:51] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.5.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:51] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.6.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:51] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.6.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:51] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.6.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:51] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.6.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:51] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-0.6.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:51] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.10.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.11.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.5.gemspec: Not a directory
+Error: 02/06/2016 [14:34:52] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.6.gemspec: Not a directory
+Error: 02/06/2016 [14:34:53] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.7.gemspec: Not a directory
+Error: 02/06/2016 [14:34:53] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.0.9.gemspec: Not a directory
+Error: 02/06/2016 [14:34:53] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.1.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:53] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.1.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:53] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.1.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:53] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.1.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:53] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.1.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:54] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.1.5.gemspec: Not a directory
+Error: 02/06/2016 [14:34:54] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.2.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:54] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.2.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:54] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.3.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:54] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.3.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:54] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.4.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:55] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.5.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:55] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.6.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:55] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.7.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:55] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.8.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:55] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.9.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:55] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.9.10.gemspec: Not a directory
+Error: 02/06/2016 [14:34:55] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.9.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:56] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.9.5.gemspec: Not a directory
+Error: 02/06/2016 [14:34:56] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.9.6.gemspec: Not a directory
+Error: 02/06/2016 [14:34:56] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.9.8.gemspec: Not a directory
+Error: 02/06/2016 [14:34:56] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/ffi-1.9.9.gemspec: Not a directory
+Error: 02/06/2016 [14:34:56] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.0.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:56] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.0.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:56] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.0.2.gemspec: Not a directory
+Error: 02/06/2016 [14:34:57] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.0.3.gemspec: Not a directory
+Error: 02/06/2016 [14:34:57] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.0.4.gemspec: Not a directory
+Error: 02/06/2016 [14:34:57] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.1.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:57] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.10.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:57] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.10.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:57] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.11.0.gemspec: Not a directory
+Error: 02/06/2016 [14:34:57] - //.gem/specs/rubygems.org%443/quick/Marshal.4.8/multi_json-1.11.1.gemspec: Not a directory
+Error: 02/06/2016 [14:34:Error: 02/06/2016 [14:35:40] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [14:35:40] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [14:35:41] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [14:35:41] - //.Trashes: Permission denied
+Error: 02/06/2016 [14:35:41] - //.fseventsd: Permission denied
+Error: 02/06/2016 [14:38:39] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [14:38:39] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [14:38:40] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [14:38:40] - //.Trashes: Permission denied
+Error: 02/06/2016 [14:38:40] - //.fseventsd: Permission denied
+Error: 02/06/2016 [14:40:40] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [14:40:40] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [14:40:41] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [14:40:41] - //.Trashes: Permission denied
+Error: 02/06/2016 [14:40:41] - //.fseventsd: Permission denied
+Error: 02/06/2016 [14:54:03] - /Applications/Thingz Arduino.app/Contents/Resources/Java/examples/BoutonAllumeLed: Permission denied
+Error: 02/06/2016 [14:54:04] - /Applications/Thingz Arduino.app/Contents/Resources/Java/examples/Clignottement: Permission denied
+Error: 02/06/2016 [14:54:04] - /Applications/Thingz Arduino.app/Contents/Resources/Java/examples/HappyBirthday: Permission denied
+Error: 02/06/2016 [15:04:12] - //Applications/Thingz Arduino.app/Contents/Resources/Java/examples/BoutonAllumeLed: Permission denied
+Error: 02/06/2016 [15:04:12] - //Applications/Thingz Arduino.app/Contents/Resources/Java/examples/Clignottement: Permission denied
+Error: 02/06/2016 [15:04:13] - //Applications/Thingz Arduino.app/Contents/Resources/Java/examples/HappyBirthday: Permission denied
+Error: 02/06/2016 [15:55:24] - //var/spool/postfix/trace: Permission denied
+Error: 02/06/2016 [15:55:24] - //var/spool/postfix/saved: Permission denied
+Error: 02/06/2016 [15:55:24] - //var/spool/postfix/public: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/private: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/maildrop: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/incoming: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/hold: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/flush: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/deferred: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/defer: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/corrupt: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/bounce: Permission denied
+Error: 02/06/2016 [15:55:25] - //var/spool/postfix/active: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/spool/mqueue: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/spool/fax: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/spool/cups: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/run/salt: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/run/mds: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/root: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/log/salt: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/log/com.apple.revisiond: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/log/DiagnosticMessages: Permission denied
+Error: 02/06/2016 [15:55:26] - //var/lib/postfix: Permission denied
+Error: 02/06/2016 [15:55:27] - //var/jabberd: Permission denied
+Error: 02/06/2016 [15:55:27] - //var/folders/zz/zyxvpxvq6csfxvn_n00020k4000h4j/T: Permission denied
+Error: 02/06/2016 [15:55:27] - //var/folders/zz/zyxvpxvq6csfxvn_n00020k4000h4j/C: Permission denied
+Error: 02/06/2016 [15:55:27] - //var/folders/zz/zyxvpxvq6csfxvn_n00020k4000h4j/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:27] - //var/folders/zz/zyxvpxvq6csfxvn_n00020k4000h4j/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:27] - //var/folders/zz/zyxvpxvq6csfxvn_n00020k4000h4j/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:27] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xk4000gcj/T: Permission denied
+Error: 02/06/2016 [15:55:28] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xk4000gcj/C: Permission denied
+Error: 02/06/2016 [15:55:28] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xk4000gcj/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:28] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xk4000gcj/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:28] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xk4000gcj/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:28] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xd0000gb8/T: Permission denied
+Error: 02/06/2016 [15:55:28] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xd0000gb8/C: Permission denied
+Error: 02/06/2016 [15:55:28] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xd0000gb8/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:29] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xd0000gb8/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:29] - //var/folders/zz/zyxvpxvq6csfxvn_n0001xd0000gb8/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:29] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wlm000g4x/T: Permission denied
+Error: 02/06/2016 [15:55:29] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wlm000g4x/C: Permission denied
+Error: 02/06/2016 [15:55:29] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wlm000g4x/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:29] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wlm000g4x/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:30] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wlm000g4x/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:30] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wdc000g3b/T: Permission denied
+Error: 02/06/2016 [15:55:30] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wdc000g3b/C: Permission denied
+Error: 02/06/2016 [15:55:30] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wdc000g3b/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:30] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wdc000g3b/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:30] - //var/folders/zz/zyxvpxvq6csfxvn_n0001wdc000g3b/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:31] - //var/folders/zz/zyxvpxvq6csfxvn_n0001w9h000g2c/T: Permission denied
+Error: 02/06/2016 [15:55:31] - //var/folders/zz/zyxvpxvq6csfxvn_n0001w9h000g2c/C: Permission denied
+Error: 02/06/2016 [15:55:31] - //var/folders/zz/zyxvpxvq6csfxvn_n0001w9h000g2c/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:31] - //var/folders/zz/zyxvpxvq6csfxvn_n0001w9h000g2c/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:31] - //var/folders/zz/zyxvpxvq6csfxvn_n0001w9h000g2c/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:31] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vs8000fy_/T: Permission denied
+Error: 02/06/2016 [15:55:32] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vs8000fy_/C: Permission denied
+Error: 02/06/2016 [15:55:32] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vs8000fy_/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:32] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vs8000fy_/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:32] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vs8000fy_/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:32] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vj8000fw_/T: Permission denied
+Error: 02/06/2016 [15:55:32] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vj8000fw_/C: Permission denied
+Error: 02/06/2016 [15:55:32] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vj8000fw_/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:33] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vj8000fw_/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:33] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vj8000fw_/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:33] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vfc000fvl/T: Permission denied
+Error: 02/06/2016 [15:55:33] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vfc000fvl/C: Permission denied
+Error: 02/06/2016 [15:55:33] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vfc000fvl/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:33] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vfc000fvl/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:34] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vfc000fvl/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:34] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vf8000fvk/T: Permission denied
+Error: 02/06/2016 [15:55:34] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vf8000fvk/C: Permission denied
+Error: 02/06/2016 [15:55:34] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vf8000fvk/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:34] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vf8000fvk/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:34] - //var/folders/zz/zyxvpxvq6csfxvn_n0001vf8000fvk/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:35] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t_c000fkl/T: Permission denied
+Error: 02/06/2016 [15:55:35] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t_c000fkl/C: Permission denied
+Error: 02/06/2016 [15:55:35] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t_c000fkl/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:35] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t_c000fkl/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:35] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t_c000fkl/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:36] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t44000fj1/T: Permission denied
+Error: 02/06/2016 [15:55:36] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t44000fj1/C: Permission denied
+Error: 02/06/2016 [15:55:36] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t44000fj1/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:36] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t44000fj1/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:36] - //var/folders/zz/zyxvpxvq6csfxvn_n0001t44000fj1/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:36] - //var/folders/zz/zyxvpxvq6csfxvn_n0001sq8000fdt/T: Permission denied
+Error: 02/06/2016 [15:55:36] - //var/folders/zz/zyxvpxvq6csfxvn_n0001sq8000fdt/C: Permission denied
+Error: 02/06/2016 [15:55:37] - //var/folders/zz/zyxvpxvq6csfxvn_n0001sq8000fdt/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:37] - //var/folders/zz/zyxvpxvq6csfxvn_n0001sq8000fdt/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:37] - //var/folders/zz/zyxvpxvq6csfxvn_n0001sq8000fdt/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:37] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rk4000f4j/T: Permission denied
+Error: 02/06/2016 [15:55:37] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rk4000f4j/C: Permission denied
+Error: 02/06/2016 [15:55:37] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rk4000f4j/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:38] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rk4000f4j/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:38] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rk4000f4j/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:38] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rdm000f3d/T: Permission denied
+Error: 02/06/2016 [15:55:38] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rdm000f3d/C: Permission denied
+Error: 02/06/2016 [15:55:38] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rdm000f3d/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:38] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rdm000f3d/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:39] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rdm000f3d/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:39] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rbr000f2y/T: Permission denied
+Error: 02/06/2016 [15:55:39] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rbr000f2y/C: Permission denied
+Error: 02/06/2016 [15:55:39] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rbr000f2y/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:39] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rbr000f2y/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:39] - //var/folders/zz/zyxvpxvq6csfxvn_n0001rbr000f2y/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:40] - //var/folders/zz/zyxvpxvq6csfxvn_n0001r9r000f2f/T: Permission denied
+Error: 02/06/2016 [15:55:40] - //var/folders/zz/zyxvpxvq6csfxvn_n0001r9r000f2f/C: Permission denied
+Error: 02/06/2016 [15:55:40] - //var/folders/zz/zyxvpxvq6csfxvn_n0001r9r000f2f/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:40] - //var/folders/zz/zyxvpxvq6csfxvn_n0001r9r000f2f/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:40] - //var/folders/zz/zyxvpxvq6csfxvn_n0001r9r000f2f/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:41] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q40000ds0/T: Permission denied
+Error: 02/06/2016 [15:55:41] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q40000ds0/C: Permission denied
+Error: 02/06/2016 [15:55:41] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q40000ds0/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:41] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q40000ds0/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:41] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q40000ds0/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:41] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q2r000drp/T: Permission denied
+Error: 02/06/2016 [15:55:42] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q2r000drp/C: Permission denied
+Error: 02/06/2016 [15:55:42] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q2r000drp/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:42] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q2r000drp/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:42] - //var/folders/zz/zyxvpxvq6csfxvn_n0001q2r000drp/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:42] - //var/folders/zz/zyxvpxvq6csfxvn_n0001pt8000dpk/T: Permission denied
+Error: 02/06/2016 [15:55:42] - //var/folders/zz/zyxvpxvq6csfxvn_n0001pt8000dpk/C: Permission denied
+Error: 02/06/2016 [15:55:43] - //var/folders/zz/zyxvpxvq6csfxvn_n0001pt8000dpk/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:43] - //var/folders/zz/zyxvpxvq6csfxvn_n0001pt8000dpk/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:43] - //var/folders/zz/zyxvpxvq6csfxvn_n0001pt8000dpk/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:43] - //var/folders/zz/zyxvpxvq6csfxvn_n0001psr000dpf/T: Permission denied
+Error: 02/06/2016 [15:55:43] - //var/folders/zz/zyxvpxvq6csfxvn_n0001psr000dpf/C: Permission denied
+Error: 02/06/2016 [15:55:43] - //var/folders/zz/zyxvpxvq6csfxvn_n0001psr000dpf/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:44] - //var/folders/zz/zyxvpxvq6csfxvn_n0001psr000dpf/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:44] - //var/folders/zz/zyxvpxvq6csfxvn_n0001psr000dpf/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:44] - //var/folders/zz/zyxvpxvq6csfxvn_n0001ps4000dp9/T: Permission denied
+Error: 02/06/2016 [15:55:44] - //var/folders/zz/zyxvpxvq6csfxvn_n0001ps4000dp9/C: Permission denied
+Error: 02/06/2016 [15:55:44] - //var/folders/zz/zyxvpxvq6csfxvn_n0001ps4000dp9/0/com.apple.pluginkit: Permission denied
+Error: 02/06/2016 [15:55:45] - //var/folders/zz/zyxvpxvq6csfxvn_n0001ps4000dp9/0/com.apple.notificationcenter: Permission denied
+Error: 02/06/2016 [15:55:45] - //var/folders/zz/zyxvpxvq6csfxvn_n0001ps4000dp9/0/com.apple.dock.launchpad: Permission denied
+Error: 02/06/2016 [15:55:59] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Downloads: No such file or directory
+Error: 02/06/2016 [15:56:00] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/ColorSync: No such file or directory
+Error: 02/06/2016 [15:56:00] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/._Caches: No such file or directory
+Error: 02/06/2016 [15:56:00] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Images: No such file or directory
+Error: 02/06/2016 [15:56:00] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Application Support: No such file or directory
+Error: 02/06/2016 [15:56:00] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Saved Application State: No such file or directory
+Error: 02/06/2016 [15:56:01] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/..: No such file or directory
+Error: 02/06/2016 [15:56:01] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Preferences: No such file or directory
+Error: 02/06/2016 [15:56:01] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Caches: No such file or directory
+Error: 02/06/2016 [15:56:01] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Dictionaries: No such file or directory
+Error: 02/06/2016 [15:56:01] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Dictionaries: No such file or directory
+Error: 02/06/2016 [15:56:54] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Downloads: No such file or directory
+Error: 02/06/2016 [15:56:54] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/ColorSync: No such file or directory
+Error: 02/06/2016 [15:56:55] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/._Caches: No such file or directory
+Error: 02/06/2016 [15:56:55] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Images: No such file or directory
+Error: 02/06/2016 [15:56:55] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Application Support: No such file or directory
+Error: 02/06/2016 [15:56:55] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Saved Application State: No such file or directory
+Error: 02/06/2016 [15:56:56] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/..: No such file or directory
+Error: 02/06/2016 [15:56:56] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Preferences: No such file or directory
+Error: 02/06/2016 [15:56:56] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Caches: No such file or directory
+Error: 02/06/2016 [15:56:56] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Dictionaries: No such file or directory
+Error: 02/06/2016 [15:56:56] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Dictionaries: No such file or directory
+Error: 02/06/2016 [15:57:12] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Downloads: No such file or directory
+Error: 02/06/2016 [15:57:12] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/ColorSync: No such file or directory
+Error: 02/06/2016 [15:57:13] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/._Caches: No such file or directory
+Error: 02/06/2016 [15:57:13] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Images: No such file or directory
+Error: 02/06/2016 [15:57:13] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Application Support: No such file or directory
+Error: 02/06/2016 [15:57:13] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Saved Application State: No such file or directory
+Error: 02/06/2016 [15:57:14] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/..: No such file or directory
+Error: 02/06/2016 [15:57:14] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Preferences: No such file or directory
+Error: 02/06/2016 [15:57:14] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Caches: No such file or directory
+Error: 02/06/2016 [15:57:14] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Dictionaries: No such file or directory
+Error: 02/06/2016 [15:57:14] - /nfs/2015/s/scollon/Library/Containers/com.tinyspeck.slackmacgap/Data/Library/Dictionaries: No such file or directory
+Error: 02/06/2016 [16:25:35] - //.DocumentRevisions-V100: Permission denied
+Error: 02/06/2016 [16:25:35] - //.DocumentRevisions-V100-bad-1: Permission denied
+Error: 02/06/2016 [16:25:35] - //.Spotlight-V100: Permission denied
+Error: 02/06/2016 [16:25:35] - //.Trashes: Permission denied
+Error: 02/06/2016 [16:25:35] - //.fseventsd: Permission denied
+Error: 02/06/2016 [16:25:38] - //Applications/Adobe InDesign CC 2015/Presets/Page Transitions: No such file or directory

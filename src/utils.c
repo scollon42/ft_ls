@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 18:45:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 11:04:38 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:42:12 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int		is_dot_directory(char *name)
 /*
 **	Check if the file 'name' is hidden or not
 */
-int		is_hidden(char *name)
+int		is_hidden(char *name, const int option)
 {
+	if (IS_NOHIDE(option))
+		return (0);
 	return (name[0] == '.' ? 1 : 0);
 }
 
@@ -44,4 +46,22 @@ char	*full_path(char *name, char *parent_path)
 	path = ft_strjoin(path, name);
 	ft_strdel(&del);
 	return (path);
+}
+
+void	free_list(t_elem **list)
+{
+	t_elem	*next;
+	t_elem 	*cur;
+
+	cur = *list;
+	while (cur)
+	{
+		next = cur->next;
+		ft_strdel(&cur->data->name);
+		ft_strdel(&cur->data->path);
+		ft_memdel((void**)&cur->data);
+		ft_memdel((void**)&cur);
+		cur = next;
+	}
+	*list = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 11:27:56 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/02 15:56:48 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_elem	*new_item(char *name, char *path, t_stat stat)
 		return (NULL);
 	if (!(new->data->name = ft_strdup(name)))
 		return (NULL);
-	new->data->path = path ? path : ft_strdup(name);
+	new->data->path = path ? ft_strdup(path) : ft_strdup(name);
 	if (!new->data->path)
 		return (NULL);
 	new->data->stat = stat;
@@ -71,15 +71,31 @@ void		sort_list(t_elem *felem, const int option)
 	cur = felem;
 	while ((cur = cur->next))
 	{
-		if (ft_strcmp(cur->data->name, cur->prev->data->name) < 0)
+		if (IS_REVERSE(option))
 		{
-			tmp = cur->data;
-			cur->data = cur->prev->data;
-			cur->prev->data = tmp;
-			child = cur->child;
-			cur->child = cur->prev->child;
-			cur->prev->child = child;
-			cur = felem;
+			if (ft_strcmp(cur->data->name, cur->prev->data->name) > 0)
+			{
+				tmp = cur->data;
+				cur->data = cur->prev->data;
+				cur->prev->data = tmp;
+				child = cur->child;
+				cur->child = cur->prev->child;
+				cur->prev->child = child;
+				cur = felem;
+			}
+		}
+		else
+		{
+			if (ft_strcmp(cur->data->name, cur->prev->data->name) < 0)
+			{
+				tmp = cur->data;
+				cur->data = cur->prev->data;
+				cur->prev->data = tmp;
+				child = cur->child;
+				cur->child = cur->prev->child;
+				cur->prev->child = child;
+				cur = felem;
+			}
 		}
 	}
 }
