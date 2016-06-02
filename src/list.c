@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 19:08:23 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/02 11:27:56 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 /*
 **	Simple function used to push back an item in t_elem list
+**	and return the addr of the new elem
 */
-void		add_item_to_list(t_elem **felem, t_elem *new)
+t_elem		*add_item_to_list(t_elem **felem, t_elem *new)
 {
 	t_elem		*cur;
 
@@ -31,6 +32,7 @@ void		add_item_to_list(t_elem **felem, t_elem *new)
 			cur->next->prev = cur;
 	}
 	cur = NULL;
+	return (new);
 }
 
 /*
@@ -45,20 +47,24 @@ t_elem	*new_item(char *name, char *path, t_stat stat)
 		return (NULL);
 	if (!(new->data = (t_data*)malloc(sizeof(t_data))))
 		return (NULL);
-	new->data->name = ft_strdup(name);
-	if (path)
-		new->data->path = ft_strdup(path);
+	if (!(new->data->name = ft_strdup(name)))
+		return (NULL);
+	new->data->path = path ? path : ft_strdup(name);
+	if (!new->data->path)
+		return (NULL);
 	new->data->stat = stat;
 	new->next = NULL;
+	new->child = NULL;
 	return (new);
 }
 /*
 **	Temporary function used to sort a t_elem list
 */
-void		sort_list(t_elem *felem)
+void		sort_list(t_elem *felem, const int option)
 {
 	t_data	*tmp;
 	t_elem	*cur;
+	t_elem	*child;
 
 	if (!felem)
 		return ;
@@ -70,6 +76,9 @@ void		sort_list(t_elem *felem)
 			tmp = cur->data;
 			cur->data = cur->prev->data;
 			cur->prev->data = tmp;
+			child = cur->child;
+			cur->child = cur->prev->child;
+			cur->prev->child = child;
 			cur = felem;
 		}
 	}

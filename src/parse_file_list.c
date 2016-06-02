@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 13:29:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 19:05:13 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/02 11:29:36 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void		print_error_list(t_elem **err)
 	while (cur != NULL)
 	{
 		del = cur;
-		ft_printf_fd(2, "ft_ls: %s: %s\n", cur->data->name, strerror(errno));
+		error(cur->data->name, strerror(errno), 0);
 		cur = cur->next;
 		ft_memdel((void**)&del);
 	}
@@ -33,7 +33,7 @@ static void		print_error_list(t_elem **err)
 **	list that contains invalid files. At the end we sort both and print
 **	the error list.
 */
-t_elem			*parse_file_list(char **files)
+t_elem			*parse_file_list(char **files, const int option)
 {
 	int			i;
 	t_elem		*list;
@@ -53,8 +53,8 @@ t_elem			*parse_file_list(char **files)
 	}
 	free(files);
 	files = NULL;
-	sort_list(err);
-	sort_list(list);
+	sort_list(err, 0);
+	sort_list(list, option);
 	print_error_list(&err);
 	return (list);
 }

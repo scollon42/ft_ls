@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 16:17:59 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/02 11:30:07 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,21 @@
 # define IS_TIMESORT(opt) opt & 8 ? 1 : 0
 # define IS_UNSORT(opt) opt & 16 ? 1 : 0
 
-typedef struct stat t_stat;
+/*
+**	error function define
+*/
+# define E_MALLOC "Memory allocation failed"
+# define E_OPTION "illegal option --"
+# define ERR_FILE_FLAGS O_WRONLY | O_CREAT | O_APPEND
+# define ERR_FILE_RIGHTS S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH
 
-typedef struct		s_data
+/*
+**	Program structures
+*/
+typedef struct stat 	t_stat;
+typedef struct dirent	t_dirent;
+
+typedef struct			s_data
 {
 	char			*name;
 	char			*path;
@@ -46,37 +58,30 @@ typedef struct		s_data
 	int				is_dir;
 	DIR				*d_adr;
 	t_stat			stat;
-	struct passwd	*pwuid;
-	struct group	*grgid;
 }					t_data;
 
-typedef struct		s_elem
+typedef struct			s_elem
 {
 	t_data			*data;
 	struct s_elem	*next;
 	struct s_elem	*prev;
 	struct s_elem	*child;
-}					t_elem;
-
+}						t_elem;
 
 /*
-**	Attributes for global variable
+**	Functions
 */
-
-typedef struct		s_option
-{
-	char			name;
-	char			opcode;
-}					t_option;
-
-
-int			get_option(int ac, char **av, int *offset);
-int			is_activated(int option, char c);
-char		**get_files(int offset, int ac, char **av);
-t_elem		*parse_file_list(char **files);
-void		add_item_to_list(t_elem **felem, t_elem *new);
-t_elem		*new_item(char *name, char *path, t_stat stat);
-void		sort_list(t_elem *felem);
-void		read_list(t_elem **felem, int option);
+int						get_option(int ac, char **av, int *offset);
+int						is_activated(const int option, char c);
+char					**get_files(int offset, int ac, char **av);
+t_elem					*parse_file_list(char **files, const int option);
+t_elem					*add_item_to_list(t_elem **felem, t_elem *new);
+t_elem					*new_item(char *name, char *path, t_stat stat);
+void					sort_list(t_elem *felem, const int option);
+void					read_list(t_elem **felem, const int option);
+int						is_dot_directory(char *name);
+int						is_hidden(char *name);
+char					*full_path(char *name, char *parent_path);
+void					error(char *type, char *esrc, short ext);
 
 #endif

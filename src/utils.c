@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 18:45:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/01 18:59:01 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/02 11:04:38 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,17 @@ int		is_hidden(char *name)
 }
 
 /*
-**	is_activated is used to check if the option 'c'
-**  is activated in options code.
+**	Function that return a new full path for a file
+**	it take the file name and the full path of the parent
 */
-int		is_activated(int option, char c)
+char	*full_path(char *name, char *parent_path)
 {
-	int		tmp;
-	int		pos;
+	char	*path;
+	char	*del;
 
-	tmp = 1;
-	pos = get_postion(c);
-	tmp = tmp << pos;
-	return (option & tmp);
+	path = ft_strjoin(parent_path, "/");
+	del = path;
+	path = ft_strjoin(path, name);
+	ft_strdel(&del);
+	return (path);
 }
