@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 18:45:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 10:59:38 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 12:47:19 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	free_list(t_elem **list)
 		next = cur->next;
 		ft_strdel(&cur->data->name);
 		ft_strdel(&cur->data->path);
+		ft_strdel(&cur->data->perm);
+		ft_strdel(&cur->data->time);
 		ft_memdel((void**)&cur->data);
 		ft_memdel((void**)&cur);
 		cur = next;

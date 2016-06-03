@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/02 15:42:34 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 11:39:20 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 12:07:41 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	print_elem(t_elem *elem, const int option)
 	{
 		if (!is_hidden(cur->data->name, option))
 		{
+			ft_printf("%s  %d %s ", cur->data->perm, cur->data->stat.st_nlink, cur->data->pwuid->pw_name);
+			ft_printf("%s  %5d %s ", cur->data->grgid->gr_name, cur->data->stat.st_size, cur->data->time);
 			ft_putendl(cur->data->name);
 			// ft_putchar('\n');
 		}

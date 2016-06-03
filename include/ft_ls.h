@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 10:36:54 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 12:40:14 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@
 */
 typedef struct stat 	t_stat;
 typedef struct dirent	t_dirent;
+typedef struct passwd	t_psswd;
+typedef struct group	t_group;
 
 typedef struct		s_data
 {
@@ -58,6 +60,8 @@ typedef struct		s_data
 	int				is_dir;
 	DIR				*d_adr;
 	t_stat			stat;
+	t_psswd			*pwuid;
+	t_group			*grgid;
 }					t_data;
 
 typedef struct		s_elem
