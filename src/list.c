@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 15:56:48 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 11:36:31 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,38 @@
 **	Simple function used to push back an item in t_elem list
 **	and return the addr of the new elem
 */
-t_elem		*add_item_to_list(t_elem **felem, t_elem *new)
+t_elem		*add_item_to_list(t_elem **felem, t_elem *new, const int option)
 {
 	t_elem		*cur;
+	t_elem		*tmp;
 
+	cur = *felem;
 	if (*felem == NULL)
 		*felem = new;
 	else
 	{
-		cur = *felem;
-		while (cur->next != NULL)
+		while (cur)
+		{
+			if (cur == *felem && sort_condition(option, cur, new))
+			{
+				new->next = cur;
+				*felem = new;
+				break ;
+			}
+			else if (cur->next == NULL)
+			{
+				cur->next = new;
+				break ;
+			}
+			else if (sort_condition(option, cur->next, new))
+			{
+				new->next = cur->next;
+				cur->next = new;
+				break ;
+			}
 			cur = cur->next;
-		cur->next = new;
-		if (cur->next)
-			cur->next->prev = cur;
+		}
 	}
-	cur = NULL;
 	return (new);
 }
 
@@ -56,46 +72,4 @@ t_elem	*new_item(char *name, char *path, t_stat stat)
 	new->next = NULL;
 	new->child = NULL;
 	return (new);
-}
-/*
-**	Temporary function used to sort a t_elem list
-*/
-void		sort_list(t_elem *felem, const int option)
-{
-	t_data	*tmp;
-	t_elem	*cur;
-	t_elem	*child;
-
-	if (!felem)
-		return ;
-	cur = felem;
-	while ((cur = cur->next))
-	{
-		if (IS_REVERSE(option))
-		{
-			if (ft_strcmp(cur->data->name, cur->prev->data->name) > 0)
-			{
-				tmp = cur->data;
-				cur->data = cur->prev->data;
-				cur->prev->data = tmp;
-				child = cur->child;
-				cur->child = cur->prev->child;
-				cur->prev->child = child;
-				cur = felem;
-			}
-		}
-		else
-		{
-			if (ft_strcmp(cur->data->name, cur->prev->data->name) < 0)
-			{
-				tmp = cur->data;
-				cur->data = cur->prev->data;
-				cur->prev->data = tmp;
-				child = cur->child;
-				cur->child = cur->prev->child;
-				cur->prev->child = child;
-				cur = felem;
-			}
-		}
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 15:46:08 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 10:36:54 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@
 typedef struct stat 	t_stat;
 typedef struct dirent	t_dirent;
 
-typedef struct			s_data
+typedef struct		s_data
 {
 	char			*name;
 	char			*path;
@@ -60,30 +60,30 @@ typedef struct			s_data
 	t_stat			stat;
 }					t_data;
 
-typedef struct			s_elem
+typedef struct		s_elem
 {
 	t_data			*data;
 	struct s_elem	*next;
 	struct s_elem	*prev;
 	struct s_elem	*child;
-}						t_elem;
+}					t_elem;
 
 /*
 **	Functions
 */
-int						get_option(int ac, char **av, int *offset);
-int						is_activated(const int option, char c);
-char					**get_files(int offset, int ac, char **av);
-t_elem					*parse_file_list(char **files, const int option);
-t_elem					*add_item_to_list(t_elem **felem, t_elem *new);
-t_elem					*new_item(char *name, char *path, t_stat stat);
-void					sort_list(t_elem *felem, const int option);
-void					read_list(t_elem **felem, const int option);
-int						is_dot_directory(char *name);
-int						is_hidden(char *name, const int option);
-char					*full_path(char *name, char *parent_path);
-void					free_list(t_elem **list);
-void					print_elem(t_elem *elem, const int option);
-void					error(char *type, char *esrc, short ext);
+int					get_option(int ac, char **av, int *offset);
+int					is_activated(const int option, char c);
+char				**get_files(int offset, int ac, char **av);
+t_elem				*parse_file_list(char **files, const int option);
+t_elem				*add_item_to_list(t_elem **f, t_elem *n, const int opt);
+t_elem				*new_item(char *name, char *path, t_stat stat);
+int					sort_condition(const int option, t_elem *e1, t_elem *e2);
+void				read_list(t_elem **felem, const int option);
+int					is_dot_directory(char *name);
+int					is_hidden(char *name, const int option);
+char				*full_path(char *name, char *parent_path);
+void				free_list(t_elem **list);
+void				print_elem(t_elem *elem, const int option);
+void				error(char *type, char *esrc, short ext);
 
 #endif

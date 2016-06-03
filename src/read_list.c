@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:21:50 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 16:29:27 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 11:46:41 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ static void	recursive_loop(t_elem *dir, const int option)
 		if (cur->data->is_dir && !is_dot_directory(cur->data->name) \
 			&& !is_hidden(cur->data->name, option))
 		{
-			ft_printf("%s:\n", cur->data->path);
+			// ft_printf("%s:\n", cur->data->path);
+			ft_putendl(cur->data->path);
 			read_dir_information(cur, option);
-			ft_printf("\n");
+			write(1, "\n", 1);
 		}
 		cur = cur->next;
 	}
@@ -67,12 +68,11 @@ static void	read_dir_information(t_elem *dir, const int option)
 		{
 			elem = new_item(dirinfo->d_name, path, st);
 			get_elem_information(elem);
-			add_item_to_list(&dir->child, elem);
+			add_item_to_list(&dir->child, elem, option);
 		}
 		ft_strdel(&path);
 	}
 	closedir(dir->data->d_adr);
-	// sort_list(dir->child, option);
 	print_elem(dir->child, option);
 	if (IS_RECURSIVE(option))
 		recursive_loop(dir, option);

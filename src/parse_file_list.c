@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 13:29:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 11:29:36 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 08:27:40 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,13 @@ t_elem			*parse_file_list(char **files, const int option)
 	while (files[++i] != NULL)
 	{
 		if (stat(files[i], &st) == -1)
-			add_item_to_list(&err, new_item(files[i], NULL, st));
+			add_item_to_list(&err, new_item(files[i], NULL, st), 0);
 		else
-			add_item_to_list(&list, new_item(files[i], NULL, st));
+			add_item_to_list(&list, new_item(files[i], NULL, st), option);
 		ft_strdel(&files[i]);
 	}
 	free(files);
 	files = NULL;
-	sort_list(err, 0);
-	sort_list(list, option);
 	print_error_list(&err);
 	return (list);
 }
