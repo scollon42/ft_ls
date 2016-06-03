@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:59:52 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 09:32:16 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 13:25:12 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int				get_option(int ac, char **av, int *offset)
 		if (!valid)
 		{
 			ft_printf_fd(2, "ft_ls: illegal option -- %c\n", av[i][1]);
-			ft_printf_fd(2, "usage: ./ft_ls [-Ralrt] [file...]\n");
+			ft_printf_fd(2, "usage: ./ft_ls [-%s] [file...]\n", OPTION_LIST);
 			exit(EXIT_FAILURE);
 		}
 	}

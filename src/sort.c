@@ -6,24 +6,32 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/03 10:17:42 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 11:30:32 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 13:12:11 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		sort_condition(const int option, t_elem *e1, t_elem *e2)
+static int		sort_lexical(const int option ,t_elem *e1, t_elem *e2)
 {
-	// if (IS_TIMESORT(option))
-	// {
-	// 	if (IS_REVERSE(option))
-	// 		return (1);
-	// 	return (0);
-	// }
-	// else
-	// {
-		if (IS_REVERSE(option))
-			return (ft_strcmp(e1->data->name, e2->data->name) < 0);
-		return (ft_strcmp(e1->data->name, e2->data->name) > 0);
-	// }
+	if (IS_REVERSE(option))
+		return (ft_strcmp(e1->data->name, e2->data->name) < 0);
+	return (ft_strcmp(e1->data->name, e2->data->name) > 0);
+}
+
+static int		sort_time(const int option, t_elem *e1, t_elem *e2)
+{
+	if (e1->data->stat.st_ctime == e2->data->stat.st_ctime)
+		return (sort_lexical(option, e1, e2));
+	if (IS_REVERSE(option))
+		return (e1->data->stat.st_ctime > e2->data->stat.st_ctime);
+	return (e1->data->stat.st_ctime < e2->data->stat.st_ctime);
+}
+
+int				sort_condition(const int option, t_elem *e1, t_elem *e2)
+{
+	if (IS_TIMESORT(option))
+		return (sort_time(option, e1, e2));
+	else
+		return (sort_lexical(option, e1, e2));
 }

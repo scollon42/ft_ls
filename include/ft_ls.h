@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 12:40:14 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 13:24:47 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,16 @@
 # include <sys/stat.h>
 # include <sys/dir.h>
 
-# define OPTION_LIST "Rlrta"
+# define OPTION_LIST "RlrtaUSs"
 
 # define IS_RECURSIVE(opt) opt & 1 ? 1 : 0
 # define IS_LISTMOD(opt) opt & 2 ? 1 : 0
 # define IS_REVERSE(opt) opt & 4 ? 1 : 0
 # define IS_TIMESORT(opt) opt & 8 ? 1 : 0
 # define IS_NOHIDE(opt) opt & 16 ? 1 : 0
+# define IS_UNSORT(opt) opt & 32 ? 1 : 0
+# define IS_SIZESORT(opt) opt & 64 ? 1 : 0
+# define IS_PRINTSIZE(opt) opt & 128 ? 1 : 0
 
 /*
 **	error function define

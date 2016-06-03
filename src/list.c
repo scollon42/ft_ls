@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 11:56:26 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/03 13:05:17 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,15 @@ t_elem		*add_item_to_list(t_elem **felem, t_elem *new, const int option)
 {
 	t_elem		*cur;
 
-	cur = *felem;
-	if (*felem == NULL)
-		*felem = new;
-	else
+	if ((cur = *felem) == NULL || sort_condition(option, cur, new))
 	{
+		*felem = new;
+		new->next = cur;
+	}
+	else
 		while (cur)
 		{
-			if (cur == *felem && sort_condition(option, cur, new))
-			{
-				new->next = cur;
-				*felem = new;
-				break ;
-			}
-			else if (cur->next == NULL)
+			if (cur->next == NULL)
 			{
 				cur->next = new;
 				break ;
@@ -46,7 +41,6 @@ t_elem		*add_item_to_list(t_elem **felem, t_elem *new, const int option)
 			}
 			cur = cur->next;
 		}
-	}
 	return (new);
 }
 
