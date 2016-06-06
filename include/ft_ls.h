@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:23:51 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 12:11:29 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <libftprintf.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 # include <dirent.h>
 # include <pwd.h>
 # include <grp.h>
@@ -28,15 +27,6 @@
 # include <sys/dir.h>
 
 # define OPTION_LIST "RlrtaUSs"
-
-# define IS_RECURSIVE(opt) opt & 1 ? 1 : 0
-# define IS_LISTMOD(opt) opt & 2 ? 1 : 0
-# define IS_REVERSE(opt) opt & 4 ? 1 : 0
-# define IS_TIMESORT(opt) opt & 8 ? 1 : 0
-# define IS_NOHIDE(opt) opt & 16 ? 1 : 0
-# define IS_UNSORT(opt) opt & 32 ? 1 : 0
-# define IS_SIZESORT(opt) opt & 64 ? 1 : 0
-# define IS_PRINTSIZE(opt) opt & 128 ? 1 : 0
 
 /*
 **	error function define
@@ -78,20 +68,40 @@ typedef struct		s_elem
 /*
 **	Functions
 */
+
+/*
+**			Functions for options handle
+*/
 int					get_option(int ac, char **av, int *offset);
 int					is_activated(const int option, char c);
+
+/*
+**			Parsing functions
+*/
 char				**get_files(int offset, int ac, char **av);
 t_elem				*parse_file_list(char **files, const int option);
+
+/*
+**			Linked list manage functions
+*/
 int					add_item(t_elem **f, t_elem *n, const int opt);
 t_elem				*new_item(char *name, char *path, t_stat stat, char ok);
+void				free_list(t_elem **list);
 int					sort_condition(const int option, t_elem *e1, t_elem *e2);
-void				read_list(t_elem **felem, const int option);
+
+/*
+**			Program core -> read files functions adn print it
+*/
+void				read_list(t_elem **felem, const int option, const int nb);
 void				get_elem_information(t_elem *elem);
+void				print_elem(t_elem *e, t_elem *p, const int o, const int nb);
+
+/*
+**			Program utils functions
+*/
 int					is_dot_directory(char *name);
 int					is_hidden(char *name, const int option);
 char				*full_path(char *name, char *parent_path);
-void				free_list(t_elem **list);
-void				print_elem(t_elem *elem, t_elem *parent, const int option);
 void				error(char *type, char *esrc, short ext);
 
 #endif

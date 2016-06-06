@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:54:23 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 10:39:20 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 12:09:32 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int			main(int ac, char **av)
 
 	option = get_option(ac, av, &offset);
 	list = parse_file_list(get_files(offset, ac, av), option);
-	read_list(&list, option);
+	read_list(&list, option, (ac - offset));
 
 	return (EXIT_SUCCESS);
 }

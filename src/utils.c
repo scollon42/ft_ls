@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 18:45:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:20:41 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:56:21 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,4 @@ char	*full_path(char *name, char *parent_path)
 	path = ft_strjoin(path, name);
 	ft_strdel(&del);
 	return (path);
-}
-
-/*
-**	This function will completly free all allocated memories in
-**	the linked list and set as NULL all pointers.
-*/
-void	free_list(t_elem **list)
-{
-	t_elem	*next;
-	t_elem 	*cur;
-
-	cur = *list;
-	while (cur)
-	{
-		next = cur->next;
-		ft_strdel(&cur->data->name);
-		ft_strdel(&cur->data->path);
-		ft_strdel(&cur->data->perm);
-		ft_strdel(&cur->data->time);
-		ft_memdel((void**)&cur->data);
-		ft_memdel((void**)&cur);
-		cur = next;
-	}
-	*list = NULL;
 }

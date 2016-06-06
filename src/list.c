@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:43:05 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:56:34 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,28 @@ t_elem	*new_item(char *name, char *path, t_stat stat, char success)
 	new->next = NULL;
 	new->child = NULL;
 	return (new);
+}
+
+/*
+**	This function will completly free all allocated memories in
+**	the linked list and set as NULL all pointers.
+*/
+void	free_list(t_elem **list)
+{
+	t_elem	*next;
+	t_elem 	*cur;
+
+	cur = *list;
+	while (cur)
+	{
+		next = cur->next;
+		ft_strdel(&cur->data->name);
+		ft_strdel(&cur->data->path);
+		ft_strdel(&cur->data->perm);
+		ft_strdel(&cur->data->time);
+		ft_memdel((void**)&cur->data);
+		ft_memdel((void**)&cur);
+		cur = next;
+	}
+	*list = NULL;
 }

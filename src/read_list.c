@@ -6,20 +6,20 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:21:50 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:43:25 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 12:21:34 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static void	read_dir_information(t_elem *dir, const int option);
+static void	read_dir_information(t_elem *dir, const int option, const int nb);
 
 /*
 **	This function read each element in dir->child linked list
 **  and if recursive option is activated read_dir_information
 **	on each directory it'll find.
 */
-static void	recursive_loop(t_elem *dir, const int option)
+static void	recursive_loop(t_elem *dir, const int option, const int nb)
 {
 	t_elem	*cur;
 
@@ -30,7 +30,7 @@ static void	recursive_loop(t_elem *dir, const int option)
 	{
 		if (cur->data->is_dir && !is_dot_directory(cur->data->name) \
 			&& !is_hidden(cur->data->name, option))
-			read_dir_information(cur, option);
+			read_dir_information(cur, option, nb);
 		cur = cur->next;
 	}
 }
@@ -40,7 +40,7 @@ static void	recursive_loop(t_elem *dir, const int option)
 **	read them with a new read_dir_information call. This functions set fchild
 **	pointer of the 'dir' on a new chained list with files we read in 'dir'
 */
-static void	read_dir_information(t_elem *dir, const int opt)
+static void	read_dir_information(t_elem *dir, const int opt, const int nb)
 {
 	t_stat		st;
 	t_dirent	*dirinfo;
@@ -61,8 +61,8 @@ static void	read_dir_information(t_elem *dir, const int opt)
 		}
 	}
 	closedir(dir->data->d_adr);
-	print_elem(dir->child, dir, opt);
-	recursive_loop(dir, opt);
+	print_elem(dir->child, dir, opt, nb);
+	recursive_loop(dir, opt, nb);
 	free_list(&dir->child);
 }
 
@@ -70,7 +70,7 @@ static void	read_dir_information(t_elem *dir, const int opt)
 **	This function is the core of ft_ls we'll parse the t_stat struct
 **	and, if the file is a directory, open it and read each files.
 */
-void		read_list(t_elem **felem, const int option)
+void		read_list(t_elem **felem, const int option, const int nb)
 {
 	t_elem	*cur;
 
@@ -79,9 +79,10 @@ void		read_list(t_elem **felem, const int option)
 	{
 		get_elem_information(cur);
 		if (cur->data->is_dir)
-			read_dir_information(cur, option);
+			read_dir_information(cur, option, nb);
 		else
-			print_elem(cur, NULL, option);
+			print_elem(cur, NULL, option, nb);
 		cur = cur->next;
 	}
+	free_list(felem);
 }
