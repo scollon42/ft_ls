@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/03 10:17:42 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:01:09 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:19:15 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ static int		sort_time(const int option, t_elem *e1, t_elem *e2)
 	return (e1->data->stat.st_ctime < e2->data->stat.st_ctime);
 }
 
+/*
+**	This function is a hub function used to compare two element by time
+**	or ascii. It can be improved with more conditions(by size for example).
+*/
 int				sort_condition(const int option, t_elem *e1, t_elem *e2)
 {
 	if (IS_TIMESORT(option))

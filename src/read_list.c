@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:21:50 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:03:50 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:43:25 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 static void	read_dir_information(t_elem *dir, const int option);
 
+/*
+**	This function read each element in dir->child linked list
+**  and if recursive option is activated read_dir_information
+**	on each directory it'll find.
+*/
 static void	recursive_loop(t_elem *dir, const int option)
 {
 	t_elem	*cur;
@@ -35,10 +40,9 @@ static void	recursive_loop(t_elem *dir, const int option)
 **	read them with a new read_dir_information call. This functions set fchild
 **	pointer of the 'dir' on a new chained list with files we read in 'dir'
 */
-static void	read_dir_information(t_elem *dir, const int option)
+static void	read_dir_information(t_elem *dir, const int opt)
 {
 	t_stat		st;
-	t_elem		*elem;
 	t_dirent	*dirinfo;
 	char		*path;
 
@@ -46,19 +50,19 @@ static void	read_dir_information(t_elem *dir, const int option)
 		return (error(dir->data->path, strerror(errno), 0));
 	while ((dirinfo = readdir(dir->data->d_adr)))
 	{
-		path = full_path(dirinfo->d_name, dir->data->path);
-		if (lstat(path, &st) == -1)
-			error(elem->data->path, strerror(errno), 0);
-		else
+		if (!is_hidden(dirinfo->d_name, opt))
 		{
-			elem = new_item(dirinfo->d_name, path, st, 1);
-			add_item_to_list(&dir->child, elem, option);
+			path = full_path(dirinfo->d_name, dir->data->path);
+			if (lstat(path, &st) == -1)
+				error(path, strerror(errno), 0);
+			else
+				add_item(&dir->child, new_item(dirinfo->d_name, path, st, 1), opt);
+			ft_strdel(&path);
 		}
-		ft_strdel(&path);
 	}
 	closedir(dir->data->d_adr);
-	print_elem(dir->child, option);
-	recursive_loop(dir, option);
+	print_elem(dir->child, dir, opt);
+	recursive_loop(dir, opt);
 	free_list(&dir->child);
 }
 
@@ -77,7 +81,7 @@ void		read_list(t_elem **felem, const int option)
 		if (cur->data->is_dir)
 			read_dir_information(cur, option);
 		else
-			print_elem(cur, option);
+			print_elem(cur, NULL, option);
 		cur = cur->next;
 	}
 }

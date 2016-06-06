@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 10:59:48 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:43:05 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 **	Simple function used to push back an item in t_elem list
 **	and return the addr of the new elem
 */
-t_elem		*add_item_to_list(t_elem **felem, t_elem *new, const int option)
+int		add_item(t_elem **felem, t_elem *new, const int option)
 {
 	t_elem		*cur;
 
@@ -41,7 +41,7 @@ t_elem		*add_item_to_list(t_elem **felem, t_elem *new, const int option)
 			}
 			cur = cur->next;
 		}
-	return (new);
+	return (new->data->stat.st_blksize);
 }
 
 /*

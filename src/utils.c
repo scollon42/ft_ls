@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 18:45:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:04:41 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:20:41 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ char	*full_path(char *name, char *parent_path)
 	return (path);
 }
 
+/*
+**	This function will completly free all allocated memories in
+**	the linked list and set as NULL all pointers.
+*/
 void	free_list(t_elem **list)
 {
 	t_elem	*next;

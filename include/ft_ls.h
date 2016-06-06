@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 10:59:20 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:23:51 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int					get_option(int ac, char **av, int *offset);
 int					is_activated(const int option, char c);
 char				**get_files(int offset, int ac, char **av);
 t_elem				*parse_file_list(char **files, const int option);
-t_elem				*add_item_to_list(t_elem **f, t_elem *n, const int opt);
+int					add_item(t_elem **f, t_elem *n, const int opt);
 t_elem				*new_item(char *name, char *path, t_stat stat, char ok);
 int					sort_condition(const int option, t_elem *e1, t_elem *e2);
 void				read_list(t_elem **felem, const int option);
@@ -91,7 +91,7 @@ int					is_dot_directory(char *name);
 int					is_hidden(char *name, const int option);
 char				*full_path(char *name, char *parent_path);
 void				free_list(t_elem **list);
-void				print_elem(t_elem *elem, const int option);
+void				print_elem(t_elem *elem, t_elem *parent, const int option);
 void				error(char *type, char *esrc, short ext);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:59:52 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 13:25:12 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:52:11 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int		get_position(char c)
 	return (-1);
 }
 
-static int		add_option(const int option, int pos, char *valid)
+static int		add_option(const int option, int pos)
 {
 	int		tmp;
 
@@ -33,7 +33,6 @@ static int		add_option(const int option, int pos, char *valid)
 	if (pos == -1)
 		return (option);
 	tmp = tmp << pos;
-	*valid = 1;
 	return (option | tmp);
 }
 
@@ -62,23 +61,24 @@ int				get_option(int ac, char **av, int *offset)
 	int			i;
 	int			j;
 	int			option;
-	char		valid;
+	int			pos;
 
 	i = 0;
 	option = 0;
 	while (++i < ac)
 	{
-		valid = 0;
-		j = -1;
-		if (av[i][0] != '-')
+		j = 0;
+		if (av[i][j] != '-')
 			break ;
 		while (av[i][++j])
-			option = add_option(option, get_position(av[i][j]), &valid);
-		if (!valid)
 		{
-			ft_printf_fd(2, "ft_ls: illegal option -- %c\n", av[i][1]);
-			ft_printf_fd(2, "usage: ./ft_ls [-%s] [file...]\n", OPTION_LIST);
-			exit(EXIT_FAILURE);
+			if ((pos = get_position(av[i][j])) == -1)
+			{
+				ft_printf_fd(2, "ft_ls: illegal option -- %c\n", av[i][j]);
+				ft_printf_fd(2, "usage: ./ft_ls [-%s] [file...]\n", OPTION_LIST);
+				exit(EXIT_FAILURE);
+			}
+			option = add_option(option, pos);
 		}
 	}
 	*offset = i;
