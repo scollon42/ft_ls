@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:21:50 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 12:21:34 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 14:27:10 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ static void	read_dir_information(t_elem *dir, const int opt, const int nb)
 			if (lstat(path, &st) == -1)
 				error(path, strerror(errno), 0);
 			else
-				add_item(&dir->child, new_item(dirinfo->d_name, path, st, 1), opt);
+				dir->data->dirblk += add_item(&dir->child, \
+				new_item(dirinfo->d_name, path, st, 1), opt);
 			ft_strdel(&path);
 		}
 	}

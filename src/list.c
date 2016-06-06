@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 11:56:34 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 14:35:42 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		add_item(t_elem **felem, t_elem *new, const int option)
 			}
 			cur = cur->next;
 		}
-	return (new->data->stat.st_blksize);
+	return (new->data->stat.st_blocks);
 }
 
 /*
@@ -62,6 +62,7 @@ t_elem	*new_item(char *name, char *path, t_stat stat, char success)
 	if (!new->data->path)
 		return (NULL);
 	new->data->stat = stat;
+	new->data->dirblk = 0;
 	if (success)
 		get_elem_information(new);
 	new->next = NULL;

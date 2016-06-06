@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:56:02 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/06 12:11:29 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 14:46:17 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <sys/stat.h>
 # include <sys/dir.h>
 
-# define OPTION_LIST "RlrtaUSs"
+# define OPTION_LIST "RlrtaSs"
 
 /*
 **	error function define
@@ -51,6 +51,7 @@ typedef struct		s_data
 	char			*time;
 	char			*perm;
 	int				is_dir;
+	int				dirblk;
 	DIR				*d_adr;
 	t_stat			stat;
 	t_psswd			*pwuid;
