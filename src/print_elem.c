@@ -43,7 +43,7 @@ void		print_elem(t_elem *elem, t_elem *dir, const int opt, const int nb)
 	if ((is_activated(opt, 'R') || nb > 1) && dir != NULL)
 		ft_printf("%s:\n", dir->data->path);
 	if ((is_activated(opt, 'l') || is_activated(opt, 's')) && dir != NULL)
-		ft_printf("total %d\n", dir->data->dirblk / 2);
+		ft_printf("total %d\n", dir->data->dirblk);
 	while (cur)
 	{
 		if (is_activated(opt, 'l'))
@@ -51,7 +51,7 @@ void		print_elem(t_elem *elem, t_elem *dir, const int opt, const int nb)
 		else
 		{
 			if (is_activated(opt, 's'))
-				ft_printf(" %d ", cur->data->stat.st_blocks / 2);
+				ft_printf(" %d ", cur->data->stat.st_blocks);
 			ft_putstr(cur->data->name);
 			write (1, " ", 1);
 		}
