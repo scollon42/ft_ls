@@ -20,7 +20,6 @@ static void print_as_list(t_elem *elem)
 {
 	char	*lnk;
 
-	lnk = ft_strnew(255);
 	ft_printf("%s  %d %s ", elem->data->perm, elem->data->stat.st_nlink, \
 							elem->data->pwuid->pw_name);
 	ft_printf("%s  %5d %s ", elem->data->grgid->gr_name, \
@@ -28,11 +27,12 @@ static void print_as_list(t_elem *elem)
 	ft_putstr(elem->data->name);
 	if (S_ISLNK(elem->data->stat.st_mode))
 	{
+		lnk = ft_strnew(255);
 		readlink(elem->data->path, lnk, 255);
 		ft_printf(" -> %s", lnk);
+		ft_strdel(&lnk);
 	}
 	write (1, "\n", 1);
-	ft_strdel(&lnk);
 }
 
 void		print_elem(t_elem *elem, t_elem *dir, const int opt, const int nb)
