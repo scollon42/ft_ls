@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 15:02:14 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 13:05:17 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 10:59:48 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_elem		*add_item_to_list(t_elem **felem, t_elem *new, const int option)
 **	Function used to allocate a new t_elem and return it.
 **	in case of error -> return NULL
 */
-t_elem	*new_item(char *name, char *path, t_stat stat)
+t_elem	*new_item(char *name, char *path, t_stat stat, char success)
 {
 	t_elem	*new;
 
@@ -62,6 +62,8 @@ t_elem	*new_item(char *name, char *path, t_stat stat)
 	if (!new->data->path)
 		return (NULL);
 	new->data->stat = stat;
+	if (success)
+		get_elem_information(new);
 	new->next = NULL;
 	new->child = NULL;
 	return (new);

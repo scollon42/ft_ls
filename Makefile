@@ -6,7 +6,7 @@
 #    By: scollon <scollon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/01 10:19:30 by scollon           #+#    #+#              #
-#    Updated: 2016/06/03 10:36:49 by scollon          ###   ########.fr        #
+#    Updated: 2016/06/06 10:45:16 by scollon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ CC 				= gcc
 CFGLAGS 		= -Werror -Wextra -Wall
 
 SRC_NAME		= 	main.c get_option.c get_files.c parse_file_list.c list.c \
-					read_list.c utils.c print_elem.c error.c sort.c
+					read_list.c get_elem_information.c utils.c print_elem.c \
+					error.c sort.c
 
 OBJ_NAME 		= $(SRC_NAME:.c=.o)
 

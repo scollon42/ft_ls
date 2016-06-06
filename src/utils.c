@@ -6,7 +6,7 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 18:45:48 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/03 12:47:19 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 11:04:41 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		is_dot_directory(char *name)
 */
 int		is_hidden(char *name, const int option)
 {
-	if (IS_NOHIDE(option))
+	if (is_activated(option, 'a'))
 		return (0);
 	return (name[0] == '.' ? 1 : 0);
 }

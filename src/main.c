@@ -6,12 +6,11 @@
 /*   By: scollon <scollon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/01 09:54:23 by scollon           #+#    #+#             */
-/*   Updated: 2016/06/02 11:29:51 by scollon          ###   ########.fr       */
+/*   Updated: 2016/06/06 10:39:20 by scollon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
-
 
 int			main(int ac, char **av)
 {
